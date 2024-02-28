@@ -1,0 +1,405 @@
+@media (max-width: 1500px) {
+    .contextText1 {
+        margin-top: 30rem;
+        margin-left: 45rem;
+    }
+
+    .contextText2 {
+        margin-top: 32rem;
+        margin-left: 20rem;
+    }
+
+    .contextText3 {
+        margin-top: 34rem;
+        margin-left: 45rem;
+    }
+
+    .contextText4 {
+        margin-top: 32rem;
+        margin-left: 20rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .contextText1 {
+        margin-top: 30rem;
+        margin-left: 25rem;
+    }
+
+    .contextText2 {
+        margin-top: 32rem;
+        margin-left: 20rem;
+    }
+
+    .contextText3 {
+        margin-top: 37rem;
+        margin-left: 30rem;
+    }
+
+    .contextText4 {
+        margin-top: 32rem;
+        margin-left: 15rem;
+    }
+
+    .nft {
+        padding-left: 5rem;
+        grid-template-columns: 4fr 5fr;
+    }
+
+    .nftText>h1 {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .heroImg {
+        height: 100svh;
+    }
+
+    .heroNav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contextText1 {
+        margin-top: 30rem;
+        margin-left: 12rem;
+    }
+
+    .contextText2 {
+        margin-top: 32rem;
+        margin-left: 15rem;
+    }
+
+    .contextText3 {
+        margin-top: 37rem;
+        margin-left: 2rem;
+    }
+
+    .contextText4 {
+        margin-top: 32rem;
+        margin-left: 10rem;
+    }
+
+    .contextText>h1 {
+        font-size: 8rem;
+        line-height: 10rem;
+    }
+
+    .contextText>div>h1 {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+
+    .contextText>div>p {
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+        line-height: 1.3rem;
+    }
+
+    .socialCon>h1,
+    .socialCon>h1>span {
+        font-size: 5rem;
+        line-height: 5rem;
+        text-align: center;
+    }
+
+    .socialCon>form {
+        width: 45rem;
+        height: 6rem;
+    }
+
+    .socialCon>form>input {
+        color: white;
+        padding-left: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .socialCon>form>button {
+        font-size: 1.5rem;
+        padding-inline: 3rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .catCard {
+        width: 5rem;
+        overflow: hidden;
+
+        height: 30rem;
+    }
+
+    .StupidBtn,
+    .StupidBtn2 {
+        display: block;
+    }
+
+    .catCardCon {
+        width: fit-content;
+        /* width: 100; */
+        overflow-x: auto;
+        /* white-space: nowrap; */
+        gap: 0.7rem;
+    }
+
+    .catCard:hover,
+    .catCardActive {
+        width: 15rem;
+        padding-left: 1rem;
+        padding-right: 0.5rem;
+    }
+
+    .catCard>div>h1 {
+        font-size: 1.7rem;
+    }
+
+    .catCard>p {
+        font-size: 0.9rem;
+        transform: translateY(-10%);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .heroTitle>p {
+        font-size: 1.5rem;
+        line-height: 1.7rem;
+    }
+
+    .heroTitle {
+        padding-top: 1rem;
+        padding-left: 1.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .slideContent>h1 {
+        font-size: 1.5rem;
+        letter-spacing: 0.8rem;
+    }
+
+    .contextText1 {
+        margin-top: 25rem;
+        margin-left: 2rem;
+    }
+
+    .contextText2 {
+        margin-top: 32rem;
+        margin-left: 10rem;
+    }
+
+    .contextText3 {
+        margin-top: 33rem;
+        margin-left: 1rem;
+    }
+
+    .contextText4 {
+        margin-top: 32rem;
+        margin-left: 2rem;
+    }
+
+    .contextText {
+        gap: 0.5rem;
+    }
+
+    .contextText>div {
+        margin-top: 1rem;
+    }
+
+    .contextText>h1 {
+        font-size: 8rem;
+        line-height: 8rem;
+        letter-spacing: 1rem;
+    }
+
+    .contextText>div>h1 {
+        font-size: 2.6rem;
+        line-height: 2.4rem;
+
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    }
+
+    .contextText>div>p {
+        font-size: 0.9rem;
+        letter-spacing: 0.1rem;
+        line-height: 1.3rem;
+    }
+
+    .theLore {
+        padding-bottom: 5rem;
+    }
+
+    .loreText {
+        gap: 1rem;
+    }
+
+    .loreText>h1 {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+
+    .loreText>p {
+        font-size: 1.2rem;
+        letter-spacing: 0.1rem;
+        width: 90%;
+        line-height: 2rem;
+        text-align: center;
+    }
+
+    .loreText>a {
+        font-size: 1.3rem;
+        line-height: 1.3rem;
+        letter-spacing: 0;
+        padding-inline: 1rem;
+        padding-block: 0.6rem;
+    }
+
+    .socialCon>h1,
+    .socialCon>h1>span {
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+        text-align: center;
+    }
+
+    .socialCon>form {
+        width: 33rem;
+        height: 5rem;
+    }
+
+    .socialCon>form>input {
+        color: white;
+        padding-left: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .socialCon>form>button {
+        font-size: 1.3rem;
+        padding-inline: 3rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .contextText2 {
+        margin-top: 22rem;
+        margin-left: 0rem;
+    }
+
+    .heroTitle>p {
+        font-size: 1.1rem;
+        line-height: 1.7rem;
+        opacity: 1;
+    }
+
+    .slide1 {
+        background-position-x: 20%;
+    }
+
+    .contextText>div {
+        margin-top: 0;
+    }
+
+    .contextText>h1 {
+        font-size: 4rem;
+        line-height: 4rem;
+        letter-spacing: 1rem;
+    }
+
+    .contextText>div>h1 {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    }
+
+    .contextText>div>p {
+        margin-top: 0;
+        width: 100%;
+        text-wrap: nowrap;
+        font-size: 0.7rem;
+        letter-spacing: 0.1rem;
+        line-height: 1rem;
+    }
+
+    .contextText2>div>p {
+        font-size: 0.62rem;
+    }
+
+    .contextText4 {
+        margin-top: 28rem;
+        margin-left: 0rem;
+    }
+
+    .contextText4>div>p {
+        text-wrap: pretty;
+        font-size: 0.62rem;
+    }
+
+    .bgTextCon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .bgText1>*,
+    .bgText2>* {
+        font-size: 20rem;
+        line-height: 20rem;
+        letter-spacing: 2rem;
+    }
+
+    .nft {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        gap: 4rem;
+    }
+
+    .nftImgCon>img {
+        width: 70vw;
+    }
+
+    .bgText {
+        width: 100vh;
+        transform: rotate(-90deg);
+    }
+
+    .bgText>h1 {
+        font-size: 90vw;
+    }
+
+    .nftText {
+        display: flex;
+        align-items: center;
+    }
+
+    .nftText>p {
+        width: 100vw;
+        text-align: center;
+        /* text-wrap: nowrap; */
+    }
+
+    .socialCon>h1,
+    .socialCon>h1>span {
+        font-size: 2.8rem;
+        line-height: 2.8rem;
+        text-align: center;
+    }
+
+    .socialCon>form {
+        width: 26rem;
+        height: 4.5rem;
+    }
+
+    .socialCon>form>input {
+        color: white;
+        padding-left: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .socialCon>form>button {
+        font-size: 1.1rem;
+        padding-inline: 2rem;
+    }
+
+}

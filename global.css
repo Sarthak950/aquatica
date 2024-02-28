@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+/**/
+/* @font-face { */
+/*     src: url('/fonts/Gelex/'); */
+/* } */
+/**/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Big Shoulders Display", sans-serif;
+    letter-spacing: 0.15rem;
+}
+
+
+
+:root {
+    --background-color: #000003;
+    --text-color: #ffffff;
+    --primary-green: #7dff68;
+    --primary-blue-dark: #216c99;
+    --primary-blue: #3a8bd5;
+    --primary-blue-transparent: #216c9911;
+    --primary-blue-light: rgba(58, 139, 213, 0.2);
+
+    --yellow: #FAFF00;
+}
+
+* {
+    user-select: none;
+    user-zoom: none;
+    animation: all 1s ease-in-out;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+a:hover {
+    animation: all 1s ease-in-out;
+    scale:1.1;
+}
