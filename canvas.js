@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 let canSkip = false;
 
-let winCount = 60;
+let winCount = 40;
 // detect if the user is on mobile
 if (window.innerWidth < 768) {
     winCount = 30;
@@ -28,7 +28,7 @@ const slidetimeline = gsap.timeline({
 });
 slidetimeline
     .to("#slide1", {
-        maskPosition: "0% -5vh",
+        maskPosition: "0% -4.5vh",
         // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         duration: 2,
     })
@@ -37,7 +37,7 @@ slidetimeline
         duration: 2,
     }, "-=1.5")
     .to("#slide2", {
-        maskPosition: "0% -5vh",
+        maskPosition: "0% -4.5vh",
         // clipPath: "polyg5on(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         duration: 2,
     }, "+=1")
@@ -46,7 +46,7 @@ slidetimeline
         duration: 2,
     }, "-=1.5")
     .to("#slide3", {
-        maskPosition: "0% -5vh",
+        maskPosition: "0% -4.5vh",
         // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         duration: 2,
     }, "+=1")
@@ -55,7 +55,7 @@ slidetimeline
         duration: 2,
     }, "-=1.5")
     .to("#slide4", {
-        maskPosition: "0% -5vh",
+        maskPosition: "0% -4.5vh",
         // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         duration: 2,
     }, "+=1")
@@ -67,7 +67,7 @@ slidetimeline
         },
     }, "-=1.5")
     .to("#slide5", {
-        maskPosition: "0% -5vh",
+        maskPosition: "0% -4.5vh",
         // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         duration: 2,
     }, "+=1");
@@ -128,7 +128,6 @@ let Astronot;
 let loaded = false;
 const modelScale = 34;
 
-
 const texture = "Aquatica/castle.hdr";
 const RgbeLoader = new RGBELoader();
 RgbeLoader.load(texture, function (texture) {
@@ -137,7 +136,7 @@ RgbeLoader.load(texture, function (texture) {
     // scene.background = texture
     // texture.dispose();
 });
-
+const loaderScreen = document.getElementById("loader");
 loader.load(
     "finalModel/model.glb",
     function (gltf) {
@@ -156,6 +155,19 @@ loader.load(
     },
     function (xhr) {
         // console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+        // check if loading is complete
+        if ((xhr.loaded / xhr.total) * 100 === 100) {
+            window.scrollTo(0, 0);
+            gsap.to(loaderScreen, {
+                opacity: 0,
+                duration: 2,
+                ease: "power3.inOut",
+                onComplete: () => {
+                    loaderScreen.style.display = "none";
+                    // scroll to the top
+                },
+            });
+        }
     },
     function (error) {
         console.log("An error happened");

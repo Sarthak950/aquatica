@@ -1,4 +1,9 @@
 @media (max-width: 1500px) {
+    .heroTitle>h1 {
+        font-size: 8rem;
+        letter-spacing: 0.5rem;
+    }
+
     .contextText1 {
         margin-top: 30rem;
         margin-left: 45rem;
@@ -21,6 +26,12 @@
 }
 
 @media (max-width: 1200px) {
+    .heroTitle>h1 {
+        margin-top: 3rem;
+        font-size: 7rem;
+        letter-spacing: 0.5rem;
+    }
+
     .contextText1 {
         margin-top: 30rem;
         margin-left: 25rem;
@@ -57,7 +68,23 @@
     }
 }
 
+@media (max-width: 1101.98px) {
+    .heroTitle>h1 {
+        font-size: 6rem;
+        letter-spacing: 0.5rem;
+    }
+}
+
 @media (max-width: 991.98px) {
+    .theLore {
+        gap: 8rem;
+    }
+
+    .heroTitle>h1 {
+        font-size: 5rem;
+        letter-spacing: 0.5rem;
+    }
+
     .heroImg {
         height: 100svh;
     }
@@ -238,8 +265,26 @@
 }
 
 @media (max-width: 767.98px) {
+    .theLore {
+        gap: 2rem;
+        flex-direction: column;
+    }
+
+    .thecomicCon>img {
+        width:40vw;
+    }
+    .loreText {
+        align-items: center;
+    }
+
+    .heroTitle>h1 {
+        margin-top: 3rem;
+        font-size: 4rem;
+        letter-spacing: 0.5rem;
+    }
+
     .heroTitle>p {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         line-height: 1.7rem;
     }
 

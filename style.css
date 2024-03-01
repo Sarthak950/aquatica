@@ -36,7 +36,7 @@
 .heroImg {
     width: 100vw;
     height: 100vh;
-    background: url("/Aquatica/first.png");
+    background: url("/Aquatica/first.webp");
     background-size: cover;
     background-position-x: center;
     background-position-y: bottom;
@@ -65,11 +65,11 @@
 
 .heroTitle>h1 {
     font-family: Anton;
-    font-size: 12rem;
-    font-size: clamp(3rem, 10vw, 12rem);
+    font-size: 11rem;
+    /* font-size: clamp(3rem, 10vw, 12rem); */
     letter-spacing: 0.5rem;
     text-transform: uppercase;
-    text-shadow: 4px 4px 30px rgba(0, 0, 0, 0.6);
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);
 }
 
 .heroTitle>p {
@@ -160,24 +160,24 @@
 .slide1 {
     z-index: 100;
 
-    background: url("/Aquatica/second.png");
+    background: url("/Aquatica/second.webp");
     background-size: cover;
 }
 
 .slide2 {
-    background: url("/Aquatica/third.png");
+    background: url("/Aquatica/third.webp");
     background-size: cover;
     z-index: 200;
 }
 
 .slide3 {
-    background: url("/Aquatica/fourth.png");
+    background: url("/Aquatica/fourth.webp");
     background-size: cover;
     z-index: 300;
 }
 
 .slide4 {
-    background: url("/Aquatica/fourth.png");
+    background: url("/Aquatica/fourth.webp");
     background-size: cover;
     z-index: 400;
 }
@@ -352,7 +352,8 @@
 
 .curosolTitle {
     font-family: Anton;
-    font-size: 10rem;
+    font-size: 8rem;
+    margin-bottom: 2rem;
     letter-spacing: 0.5rem;
     text-transform: uppercase;
     color: black;
@@ -398,7 +399,7 @@
 
 .catCard {
     width: 10rem;
-    height: 38rem;
+    height: 35rem;
     border: 2px solid black;
     border-radius: 1rem;
     transition: all 0.5s ease;
@@ -476,17 +477,21 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    /* flex-direction: column; */
+    justify-content: center;
+    gap: 15rem;
     align-items: center;
     padding-bottom: 6rem;
+}
+.thecomicCon>img {
+    width: 22vw;
 }
 
 .loreText {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.5rem;
 }
 
@@ -506,8 +511,9 @@
     letter-spacing: 0.1rem;
     text-transform: capitalize;
     width: 100%;
+    text-wrap: stable;
     line-height: 2rem;
-    text-align: center;
+    /* text-align: center; */
     width: 40vw;
 }
 
@@ -700,8 +706,8 @@
     display: flex;
 
     background: var(--yellow);
-    padding-block: 0.5rem;
-    gap: 2rem;
+    padding-block: 1rem;
+    gap: 4rem;
     align-items: center;
     justify-content: center;
     width: 100vw;
@@ -714,7 +720,7 @@
     text-decoration: none;
 }
 .links>a > img {
-    height: 4rem;
+    height: 2.5rem;
 }
 
 .modelTextCon {
