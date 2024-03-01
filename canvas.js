@@ -395,6 +395,22 @@ camera.position.set(
 //     }
 // });
 
+const skyboxGeometry = new THREE.BoxGeometry(1000, 1000, 1000);
+const skyboxMaterial = new THREE.MeshBasicMaterial({
+    map: new THREE.CubeTextureLoader().load([
+        "/Aquatica/skybox2/right.jpg",
+        "/Aquatica/skybox2/left.png",
+        "/Aquatica/skybox2/top.png",
+        "/Aquatica/skybox2/bottom.png",
+        "/Aquatica/skybox2/front.png",
+        "/Aquatica/skybox2/back.png",
+    ]),
+    side: THREE.BackSide, // Important for correctly rendering the inside of the cube
+});
+
+const skybox = new THREE.Mesh(skyboxGeometry, skyboxMaterial);
+scene.add(skybox);
+
 // Event listener for window resize
 function handleResize() {
     const newWidth = window.innerWidth;
