@@ -49,6 +49,12 @@
     .nftText>h1 {
         font-size: 5rem;
     }
+
+    .curosolTitle {
+        font-size: 7rem;
+        letter-spacing: 0.5rem;
+        margin-bottom: 1rem;
+    }
 }
 
 @media (max-width: 991.98px) {
@@ -120,9 +126,60 @@
         font-size: 1.5rem;
         padding-inline: 3rem;
     }
+
+    .modelTextCon {
+        position: absolute;
+        top: 10%;
+        left: 5%;
+    }
+
+    .modelText {
+        padding: 1rem;
+        position: absolute;
+    }
+
+    .modelText>h1 {
+        font-size: 5rem;
+        line-height: 5rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .modelText>p {
+        font-size: 1rem;
+        width: 50vw;
+        line-height: 1.2rem;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        padding-block: 0.5rem;
+    }
 }
 
 @media screen and (max-width: 900px) {
+
+    .StupidBtn,
+    .StupidBtn2 {
+        display: block;
+    }
+
+    .sliderScrollCon {
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .sliderScrollCon::-webkit-scrollbar {
+        display: none;
+    }
+
+    .catCardCon {
+        width: fit-content;
+        overflow-x: auto;
+        gap: 0.7rem;
+    }
+
     .catCard {
         width: 5rem;
         overflow: hidden;
@@ -130,33 +187,53 @@
         height: 30rem;
     }
 
-    .StupidBtn,
-    .StupidBtn2 {
-        display: block;
-    }
-
-    .catCardCon {
-        width: fit-content;
-        /* width: 100; */
-        overflow-x: auto;
-        /* white-space: nowrap; */
-        gap: 0.7rem;
-    }
-
     .catCard:hover,
-    .catCardActive {
-        width: 15rem;
+    .catCardActive,
+    .activeCard {
+        width: 19rem;
         padding-left: 1rem;
         padding-right: 0.5rem;
     }
 
+    .activeCard>p {
+        opacity: 0.8;
+        margin-top: 1rem;
+    }
+
+    .activeCard>div>h1 {
+        font-size: 1.7rem;
+    }
+
+    .inactiveCard {
+        width: 5rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .inactiveCard>p {
+        opacity: 0;
+        margin-top: 0;
+    }
+
+    .inactiveCard>div>h1 {
+        transform: rotate(-90deg) translateX(-9rem) translateY(-30%) !important;
+        font-size: 1.5rem;
+    }
+
     .catCard>div>h1 {
+        transform: rotate(0deg) translateX(0rem) translateY(0%);
         font-size: 1.7rem;
     }
 
     .catCard>p {
         font-size: 0.9rem;
         transform: translateY(-10%);
+    }
+
+    .curosolTitle {
+        font-size: 5.5rem;
+        letter-spacing: 0.8rem;
+        margin-bottom: 1rem;
     }
 }
 
@@ -274,6 +351,12 @@
     .socialCon>form>button {
         font-size: 1.3rem;
         padding-inline: 3rem;
+    }
+
+    .curosolTitle {
+        font-size: 4.5rem;
+        letter-spacing: 0.5rem;
+        margin-bottom: 3rem;
     }
 }
 
@@ -402,4 +485,59 @@
         padding-inline: 2rem;
     }
 
+    .modelTextCon {
+        position: absolute;
+        top: 10%;
+        left: 5%;
+    }
+
+    .modelText {
+        padding: 1rem;
+        position: absolute;
+    }
+
+    .modelText>h1 {
+        font-size: 3.3rem;
+        line-height: 3.3rem;
+        letter-spacing: 0.2rem;
+        text-wrap: nowrap;
+    }
+
+    .modelText>p {
+        font-size: 0.9rem;
+        width: 80vw;
+        line-height: 1.1rem;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        padding-block: 0.5rem;
+    }
+
+    .slide {
+        width: 100vw;
+        height: 100lvh;
+        overflow: hidden;
+        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
+        mask: url("/Aquatica/mask.png");
+        mask-size: cover;
+        mask-repeat: no-repeat;
+        mask-position-y: 110vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .curosolTitle {
+        text-align: center;
+        font-size: 4rem;
+        letter-spacing: 0.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .links>a>img {
+        height: 3rem;
+    }
 }

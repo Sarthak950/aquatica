@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 let canSkip = false;
 
 let winCount = 60;
-// detect if the user is on mobile 
+// detect if the user is on mobile
 if (window.innerWidth < 768) {
     winCount = 30;
 }
@@ -28,7 +28,8 @@ const slidetimeline = gsap.timeline({
 });
 slidetimeline
     .to("#slide1", {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        maskPosition: "0% 0vh",
+        // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         duration: 2,
     })
     .to(".contextText1", {
@@ -36,7 +37,8 @@ slidetimeline
         duration: 2,
     }, "-=1.5")
     .to("#slide2", {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        maskPosition: "0% -0vh",
+        // clipPath: "polyg5on(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         duration: 2,
     }, "+=1")
     .to(".contextText2", {
@@ -44,7 +46,8 @@ slidetimeline
         duration: 2,
     }, "-=1.5")
     .to("#slide3", {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        maskPosition: "0% -0vh",
+        // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         duration: 2,
     }, "+=1")
     .to(".contextText3", {
@@ -52,7 +55,8 @@ slidetimeline
         duration: 2,
     }, "-=1.5")
     .to("#slide4", {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        maskPosition: "0% -0vh",
+        // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         duration: 2,
     }, "+=1")
     .to(".contextText4", {
@@ -63,7 +67,8 @@ slidetimeline
         },
     }, "-=1.5")
     .to("#slide5", {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        maskPosition: "0% -0vh",
+        // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         duration: 2,
     }, "+=1");
 
@@ -108,9 +113,9 @@ const renderer = new THREE.WebGLRenderer({
     canvas: canvas,
     antialias: true,
 });
-renderer.outputColorSpace= THREE.SRGBColorSpace ;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.LinearFilter;
-renderer.toneMappingExposure = 0.6;
+renderer.toneMappingExposure = .8;
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.render(scene, camera);
@@ -123,15 +128,19 @@ let Astronot;
 let loaded = false;
 const modelScale = 34;
 
-
-const texture = 'Aquatica/studioLight.hdr'
+// const texture = "Aquatica/studioLight.hdr";
+// const texture = "Aquatica/build.hdr";
+// const texture = "Aquatica/office.hdr";
+// const texture = "Aquatica/studio.hdr";
+// const texture = "Aquatica/cristmas.hdr";
+const texture = "Aquatica/castle.hdr";
 const RgbeLoader = new RGBELoader();
-RgbeLoader.load (texture, function (texture) {
+RgbeLoader.load(texture, function (texture) {
     texture.mapping = THREE.EquirectangularReflectionMapping;
     scene.environment = texture;
     // scene.background = texture
     // texture.dispose();
-})
+});
 
 loader.load(
     "finalModel/model.glb",
@@ -162,11 +171,46 @@ camera.position.y = 70;
 camera.position.z = 70;
 let rotation = { x: 0, y: 0, z: 0 };
 
+// const camera_position_array = [
+//     { x: 0, y: 45, z: 10 }, // to make it up
+//     { x: 0, y: 48, z: 20 }, // to make it face the model
+//     { x: 20, y: 50, z: 15 }, // to the earing position
+//     { x: 6, y: 38, z: 17 }, // to the chest
+//     { x: -12, y: 35, z: 17 }, // to the left wrist
+//     { x: -23, y: 30, z: -10 }, // to the left wrist
+//     { x: 15, y: 40, z: -20 }, // to the bag
+//     { x: 20, y: 32, z: 1 }, // to the right wrist
+//     { x: 11, y: 32, z: 22 }, // to the waist
+//     { x: -20, y: 25, z: 25 }, // to the waist
+//     { x: -20, y: 17, z: 3 }, // to the waist
+//     { x: -5, y: 12, z: -15 }, // to the knee
+//     { x: 20, y: 8, z: -3 }, // to the right boots
+//     { x: 10, y: 4, z: 10 }, // to the left boots
+//     { x: 0, y: 48, z: 20 }, // to make it face the model
+// ];
+//
+// const camera_lookat_array = [
+//     { x: -5, y: 40, z: 3 }, // look away from the model
+//     { x: 0, y: 46, z: 7 }, // on to the face
+//     { x: 4, y: 48, z: 1.5 }, // to the ear
+//     { x: 3, y: 38, z: 5 }, // to the chest
+//     { x: -10, y: 30, z: 3.5 }, // to the left wrist
+//     { x: -6, y: 30, z: 0 }, // to the left wrist
+//     { x: 0, y: 38, z: -7 }, // to the bag
+//     { x: 10, y: 30, z: 3.5 }, // to the right wrist
+//     { x: -2, y: 30, z: 5 }, // to the waist
+//     { x: 2, y: 27, z: 5 }, // to the waist
+//     { x: 0, y: 18, z: 0 }, // to the midleg
+//     { x: -5, y: 5, z: 0 }, // to the  knee
+//     { x: 5, y: 3.5, z: 3 }, // to the right boots
+//     { x: -1, y: 1.5, z: 1 }, // to the left boots
+//     { x: 0, y: 46, z: 7 }, // on to the face
+// ];
 const camera_position_array = [
-    { x: 0, y: 45, z: 10 }, // to make it up
+    { x: -1, y: 48, z: 20 }, // to make it up
     { x: 0, y: 48, z: 20 }, // to make it face the model
-    { x: 20, y: 50, z: 15 }, // to the earing position
-    { x: 6, y: 38, z: 17 }, // to the chest
+    { x: -20, y: 50, z: 15 }, // to the earing position
+    { x: 2, y: 38, z: 17 }, // to the chest
     { x: -12, y: 35, z: 17 }, // to the left wrist
     { x: -23, y: 30, z: -10 }, // to the left wrist
     { x: 15, y: 40, z: -20 }, // to the bag
@@ -176,14 +220,14 @@ const camera_position_array = [
     { x: -20, y: 17, z: 3 }, // to the waist
     { x: -5, y: 12, z: -15 }, // to the knee
     { x: 20, y: 8, z: -3 }, // to the right boots
-    { x: 10, y: 4, z: 10 }, // to the left boots
-    { x: 0, y: 48, z: 20 }, // to make it face the model
+    { x: 10, y: 6, z: 15 }, //15o the left boots
+    { x: 0, y: 35, z: 30 }, // to make it face the model
 ];
 
 const camera_lookat_array = [
-    { x: -5, y: 40, z: 3 }, // look away from the model
+    { x: 8.5, y: 47, z: 12 }, // look away from the model
     { x: 0, y: 46, z: 7 }, // on to the face
-    { x: 4, y: 48, z: 1.5 }, // to the ear
+    { x: -3, y: 48, z: 4 }, // to the ear
     { x: 3, y: 38, z: 5 }, // to the chest
     { x: -10, y: 30, z: 3.5 }, // to the left wrist
     { x: -6, y: 30, z: 0 }, // to the left wrist
@@ -195,9 +239,8 @@ const camera_lookat_array = [
     { x: -5, y: 5, z: 0 }, // to the  knee
     { x: 5, y: 3.5, z: 3 }, // to the right boots
     { x: -1, y: 1.5, z: 1 }, // to the left boots
-    { x: 0, y: 46, z: 7 }, // on to the face
+    { x: 0, y: 36, z: 7 }, // on to the face
 ];
-
 const timeArray = [
     { duration_1: 5, duration_2: 5, gap: 15 },
     { duration_1: 5, duration_2: 5, gap: 5 },
@@ -294,15 +337,15 @@ for (let i = 0 + 1; i < numPositions; i++) {
         ease: `${easeArray[i].ease}.${easeArray[i].stage}`,
     }, `-=${timeArray[i].gap}`);
 
-    if(i === 1 || i === 2 || i === 3 || i === 6 || i === 8 || i === 13) {
-        slidetimeline.to(modelTextList[count],{
-            opacity:1,
-            duration:2,
-        },"-=1")
-        .to (modelTextList[count],{
-            opacity:0,
-            duration:2,
-        },'+=0.5')
+    if (i === 1 || i === 2 || i === 3 || i === 6 || i === 8 || i === 13) {
+        slidetimeline.to(modelTextList[count], {
+            opacity: 1,
+            duration: 2,
+        }, "-=1")
+            .to(modelTextList[count], {
+                opacity: 0,
+                duration: 2,
+            }, "+=0.5");
         count++;
     }
 }

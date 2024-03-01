@@ -1,11 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-/**/
-/* @font-face { */
-/*     src: url('/fonts/Gelex/'); */
-/* } */
-/**/
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +10,9 @@
     letter-spacing: 0.15rem;
 }
 
-
+html {
+    overflow-x: hidden;
+}
 
 :root {
     --background-color: #000003;
@@ -25,7 +23,7 @@
     --primary-blue-transparent: #216c9911;
     --primary-blue-light: rgba(58, 139, 213, 0.2);
 
-    --yellow: #FAFF00;
+    --yellow: #faff00;
 }
 
 * {
@@ -43,5 +41,5 @@ body {
 
 a:hover {
     animation: all 1s ease-in-out;
-    scale:1.1;
+    scale: 1.1;
 }

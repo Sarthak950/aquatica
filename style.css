@@ -1,11 +1,11 @@
 @font-face {
     font-family: "Gelex";
-    src: url("../../../public/fonts/Gelix/Gellix-SemiBold.woff");
+    src: url("/fonts/Gelix/Gellix-SemiBold.woff");
 }
 
 #canvas {
     width: 100vw;
-    height: 100svh;
+    height: 100lvh;
 }
 
 .heroSec {
@@ -73,13 +73,13 @@
 }
 
 .heroTitle>p {
-    font-family: "Big Shoulders Display";
+    font-family: "Gelex";
     font-size: 2rem;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
     width: 100%;
-    line-height: 3rem;
-    opacity: 0.7;
+    line-height: 2.5rem;
+    opacity: 0.8;
 
     text-shadow: 4px 4px 30px rgba(0, 0, 0, 0.6);
 }
@@ -133,26 +133,27 @@
     }
 
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
     }
 }
 
 .slide {
     width: 100vw;
-    height: 100vh;
+    height: 100lvh;
     overflow: hidden;
     position: relative;
     position: absolute;
     top: 0;
     left: 0;
-    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    /* clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%); */
 
-    /* mask: url("/Aquatica/mask.png"); */
-    /* mask-repeat: no-repeat; */
-    /* mask-position-y: 100vh; */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* align-items: center; */
+    mask: url("/Aquatica/mask.png");
+    mask-size: cover;
+    mask-repeat: no-repeat;
+    mask-position-y: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .slide1 {
@@ -234,7 +235,7 @@
     width: 100%;
     line-height: 1.3rem;
 
-    text-shadow: 4px 4px 18px rgba(0, 0, 0, 1);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
 }
 
 .contextText2>*,
@@ -243,22 +244,22 @@
 }
 
 .contextText1 {
-    margin-top: 35rem;
-    margin-left: 55rem;
+    margin-top: 20rem;
+    margin-left: 45rem;
 }
 
 .contextText2 {
-    margin-top: 32rem;
+    margin-top: 15rem;
     margin-left: 20rem;
 }
 
 .contextText3 {
-    margin-top: 37rem;
-    margin-left: 65rem;
+    margin-top: 17rem;
+    margin-left: 35rem;
 }
 
 .contextText4 {
-    margin-top: 32rem;
+    margin-top: 22rem;
     margin-left: 20rem;
 }
 
@@ -299,6 +300,10 @@
     animation: moveright 120s linear infinite;
 }
 
+.bgText3 {
+    animation: moveright2 120s linear infinite;
+}
+
 @keyframes moveleft {
     0% {
         transform: translateX(0%);
@@ -310,6 +315,16 @@
 }
 
 @keyframes moveright {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(50%);
+    }
+}
+
+@keyframes moveright2 {
     0% {
         transform: translateX(-50%);
     }
@@ -327,9 +342,20 @@
 
     overflow: hidden;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 
     animation: all 3s ease-in-out;
+}
+
+.curosolTitle {
+    font-family: Anton;
+    font-size: 10rem;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    color: black;
+    text-shadow: 4px 4px 30px rgba(0, 0, 0, 0.6);
 }
 
 .StupidBtn,
@@ -352,14 +378,19 @@
     left: 10%;
 }
 
+.sliderScrollCon {
+    width: 100vw;
+}
+
 .catCardCon {
     width: 100%;
     /* height: 100%; */
     display: flex;
     /* gap: 2rem; */
+    flex-shrink: 1;
+    gap: 0.3rem;
     justify-content: space-evenly;
     align-items: center;
-    flex-shrink: 0;
     padding-inline: 1rem;
     transition: transform 0.3s ease;
 }
@@ -389,6 +420,17 @@
     padding-right: 1rem;
 }
 
+.catCard:hover>p {
+    opacity: 0.8;
+    margin-top: 1rem;
+    /* height: fit-content; */
+}
+
+.catCard:hover>div>h1 {
+    transform: rotate(0deg) translateX(0rem) translateY(0%);
+    transform-origin: 0% -50%;
+}
+
 .catCard>p {
     font-family: Anton;
     font-size: 1.1rem;
@@ -396,13 +438,6 @@
     transition: all 1.3s ease;
     opacity: 0;
     word-wrap: nowrap;
-}
-
-.catCard:hover>p,
-.catCardActive {
-    opacity: 0.8;
-    margin-top: 1rem;
-    /* height: fit-content; */
 }
 
 .catCard::after {
@@ -418,12 +453,6 @@
 
 .catCard>* {
     z-index: 10;
-}
-
-.catCard:hover>div>h1,
-.catCardActive {
-    transform: rotate(0deg) translateX(0rem) translateY(0%);
-    transform-origin: 0% -50%;
 }
 
 .catCard>div>h1 {
@@ -482,7 +511,7 @@
 }
 
 .loreText>a {
-    font-family: "Big Shoulders Display";
+    font-family: "Gelex";
     font-size: 1.6rem;
     line-height: 1.6rem;
     letter-spacing: 0;
@@ -547,7 +576,7 @@
 }
 
 .nftText>a {
-    font-family: "Big Shoulders Display";
+    font-family: "Gelex";
     font-size: 2rem;
     line-height: 2rem;
     letter-spacing: 0;
@@ -589,7 +618,7 @@
 }
 
 .bgText>h1 {
-    font-family: "Big Shoulders Display";
+    font-family: "Gelex";
     font-size: 100vh;
     line-height: 100vh;
     width: fit-content;
@@ -605,6 +634,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    position: relative;
 }
 
 .socialCon {
@@ -663,21 +694,70 @@
     font-size: 2.5rem;
     padding-inline: 6rem;
 }
+
+.links {
+    display: flex;
+
+    background: var(--yellow);
+    padding-block: 0.5rem;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.links>a {
+    text-decoration: none;
+}
+.links>a > img {
+    height: 4rem;
+}
+
 .modelTextCon {
     position: absolute;
-    top: 5%;
+    top: 10%;
     left: 5%;
 }
 
 .modelText {
-    font-family: "Big Shoulders Display";
-    font-size: 2.3rem;
+    opacity: 0;
+    padding: 1rem;
+    position: absolute;
+}
+
+.modelText>h1 {
+    font-family: Anton;
+    font-size: 7rem;
+    line-height: 7rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    color: var(--yellow);
+
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 1);
+
+    padding-inline: 0.5rem;
+    width: fit-content;
+}
+
+.modelText>p {
+    /* font-family: "Gelex"; */
+    font-family: "Gelex";
+    font-size: 1.3rem;
     width: 40vw;
-    line-height: 3rem;
+    line-height: 2rem;
     letter-spacing: 0.5rem;
     text-transform: uppercase;
     margin-bottom: 1rem;
     border-bottom: 2px solid var(--yellow);
-    position: absolute;
-    opacity: 0;
+    text-wrap: pretty;
+    padding-inline: 0.5rem;
+    padding-block: 0.5rem;
+
+    border-radius: 10px 10px 0px 0px;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    /* opacity: 0; */
 }
