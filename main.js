@@ -37,3 +37,24 @@ window.addEventListener("resize", () => {
         })
     }
 });
+
+
+const gameTipsList = [
+    "You can use the arrow keys to move the character",
+    "You can use the space key to jump",
+    "You can use the shift key to sprint",
+    "You can use the control key to crouch",
+    "You can use the left mouse button to attack",
+    "You can use the right mouse button to block",
+    "You can use the middle mouse button to use the special ability",
+    "You can use the E key to interact with the environment",
+    "You can use the Q key to use the special ability",
+    "You can use the R key to reload",
+    "You can use the F key to use the flashlight",
+    "You can use the G key to use the"
+]
+
+const gameTips = document.getElementById("loaderTip");
+
+// inject a random tip into the gameTips 
+gameTips.innerHTML = gameTipsList[Math.floor(Math.random() * gameTipsList.length)];

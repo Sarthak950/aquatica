@@ -160,8 +160,8 @@ loader.load(
             window.scrollTo(0, 0);
             gsap.to(loaderScreen, {
                 opacity: 0,
-                duration: 2,
-                ease: "power3.inOut",
+                duration: 3,
+                // ease: "power3.out",
                 onComplete: () => {
                     loaderScreen.style.display = "none";
                     // scroll to the top

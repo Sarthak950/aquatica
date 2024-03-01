@@ -65,11 +65,11 @@
 
 .heroTitle>h1 {
     font-family: Anton;
-    font-size: 11rem;
-    /* font-size: clamp(3rem, 10vw, 12rem); */
+    font-size: 12rem;
+    font-size: clamp(3rem, 10vw, 12rem);
     letter-spacing: 0.5rem;
     text-transform: uppercase;
-    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);
+    text-shadow: 4px 4px 30px rgba(0, 0, 0, 0.6);
 }
 
 .heroTitle>p {
@@ -352,8 +352,7 @@
 
 .curosolTitle {
     font-family: Anton;
-    font-size: 8rem;
-    margin-bottom: 2rem;
+    font-size: 10rem;
     letter-spacing: 0.5rem;
     text-transform: uppercase;
     color: black;
@@ -399,7 +398,7 @@
 
 .catCard {
     width: 10rem;
-    height: 35rem;
+    height: 38rem;
     border: 2px solid black;
     border-radius: 1rem;
     transition: all 0.5s ease;
@@ -478,20 +477,16 @@
     height: 100vh;
     display: flex;
     /* flex-direction: column; */
-    justify-content: center;
-    gap: 15rem;
+    justify-content: space-evenly;
     align-items: center;
     padding-bottom: 6rem;
-}
-.thecomicCon>img {
-    width: 22vw;
 }
 
 .loreText {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 1.5rem;
 }
 
@@ -511,9 +506,8 @@
     letter-spacing: 0.1rem;
     text-transform: capitalize;
     width: 100%;
-    text-wrap: stable;
     line-height: 2rem;
-    /* text-align: center; */
+    text-align: center;
     width: 40vw;
 }
 
@@ -530,6 +524,10 @@
     color: black;
     padding-inline: 1.5rem;
     padding-block: 1rem;
+}
+
+.thecomicCon>img {
+    width: 24vw;
 }
 
 .nft {
@@ -706,8 +704,8 @@
     display: flex;
 
     background: var(--yellow);
-    padding-block: 1rem;
-    gap: 4rem;
+    padding-block: 0.5rem;
+    gap: 2rem;
     align-items: center;
     justify-content: center;
     width: 100vw;
@@ -719,7 +717,8 @@
 .links>a {
     text-decoration: none;
 }
-.links>a > img {
+
+.links>a>img {
     height: 2.5rem;
 }
 
@@ -750,7 +749,6 @@
 }
 
 .modelText>p {
-    /* font-family: "Gelex"; */
     font-family: "Gelex";
     font-size: 1.3rem;
     width: 40vw;
@@ -766,5 +764,57 @@
     border-radius: 10px 10px 0px 0px;
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
-    /* opacity: 0; */
+
+}
+
+
+#loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    position: relative;
+}
+.loaderImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.loaderImg > img:nth-child(1) {
+  animation: scale 2s linear infinite;
+}
+
+.loaderText {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    padding-block: 5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.loaderText > h1 {
+    font-family: Anton;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+}
+.loaderText > p {
+    font-family: "Gelex";
+    text-transform: capitalize;
+    font-size: 1.2rem;
+}
+
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
