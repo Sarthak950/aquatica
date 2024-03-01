@@ -23,11 +23,12 @@ const slidetimeline = gsap.timeline({
         end: `+=${window.innerHeight * winCount}`,
         scrub: true,
         pin: true,
+        anticipatePin: 1,
     },
 });
 slidetimeline
     .to("#slide1", {
-        maskPosition: "0% 0vh",
+        maskPosition: "0% -5vh",
         // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         duration: 2,
     })
@@ -36,7 +37,7 @@ slidetimeline
         duration: 2,
     }, "-=1.5")
     .to("#slide2", {
-        maskPosition: "0% -0vh",
+        maskPosition: "0% -5vh",
         // clipPath: "polyg5on(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         duration: 2,
     }, "+=1")
@@ -45,7 +46,7 @@ slidetimeline
         duration: 2,
     }, "-=1.5")
     .to("#slide3", {
-        maskPosition: "0% -0vh",
+        maskPosition: "0% -5vh",
         // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         duration: 2,
     }, "+=1")
@@ -54,7 +55,7 @@ slidetimeline
         duration: 2,
     }, "-=1.5")
     .to("#slide4", {
-        maskPosition: "0% -0vh",
+        maskPosition: "0% -5vh",
         // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         duration: 2,
     }, "+=1")
@@ -66,7 +67,7 @@ slidetimeline
         },
     }, "-=1.5")
     .to("#slide5", {
-        maskPosition: "0% -0vh",
+        maskPosition: "0% -5vh",
         // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         duration: 2,
     }, "+=1");
@@ -127,11 +128,7 @@ let Astronot;
 let loaded = false;
 const modelScale = 34;
 
-// const texture = "Aquatica/studioLight.hdr";
-// const texture = "Aquatica/build.hdr";
-// const texture = "Aquatica/office.hdr";
-// const texture = "Aquatica/studio.hdr";
-// const texture = "Aquatica/cristmas.hdr";
+
 const texture = "Aquatica/castle.hdr";
 const RgbeLoader = new RGBELoader();
 RgbeLoader.load(texture, function (texture) {

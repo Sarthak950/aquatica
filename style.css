@@ -147,10 +147,11 @@
     left: 0;
     /* clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%); */
 
-    mask: url("/Aquatica/mask.png");
-    mask-size: cover;
+    mask: url("/Aquatica/mask4.png");
+    mask-size: 100% auto;
+    /* mask-size: 100vh 100vw; */
     mask-repeat: no-repeat;
-    mask-position: 100% 100vh;
+    mask-position: 0% 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
