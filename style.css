@@ -150,7 +150,7 @@
     mask: url("/Aquatica/mask.png");
     mask-size: cover;
     mask-repeat: no-repeat;
-    mask-position-y: 100vh;
+    mask-position: 100% 100vh;
     display: flex;
     justify-content: center;
     align-items: center;

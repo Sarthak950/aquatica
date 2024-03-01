@@ -23,7 +23,6 @@ const slidetimeline = gsap.timeline({
         end: `+=${window.innerHeight * winCount}`,
         scrub: true,
         pin: true,
-        anticipatePin: 1,
     },
 });
 slidetimeline
