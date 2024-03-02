@@ -3,7 +3,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-let winCount = 14;
+let winCount = 20;
 // detect if the user is on mobile
 if (window.innerWidth < 768) {
     winCount = 8;
@@ -21,45 +21,45 @@ const slidetimeline = gsap.timeline({
 });
 slidetimeline
     .to("#slide1", {
-        maskPosition: "0% -4.5vh",
-        // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 2,
+        // maskPosition: "0% -4.5vh",
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 3,
     })
     .to(".contextText1", {
         opacity: 1,
-        duration: 2,
+        duration: 1,
     }, "-=1.5")
     .to("#slide2", {
-        maskPosition: "0% -4.5vh",
-        // clipPath: "polyg5on(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 2,
+        // maskPosition: "0% -4.5vh",
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 3,
     }, "+=1")
     .to(".contextText2", {
         opacity: 1,
-        duration: 2,
+        duration: 1,
     }, "-=1.5")
     .to("#slide3", {
-        maskPosition: "0% -4.5vh",
-        // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 2,
+        // maskPosition: "0% -4.5vh",
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 3,
     }, "+=1")
     .to(".contextText3", {
         opacity: 1,
         duration: 2,
     }, "-=1.5")
     .to("#slide4", {
-        maskPosition: "0% -4.5vh",
-        // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 2,
+        // maskPosition: "0% -4.5vh",
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 3,
     }, "+=1")
     .to(".contextText4", {
         opacity: 1,
         duration: 2,
     }, "-=1.5")
     .to("#slide5", {
-        maskPosition: "0% -4.5vh",
-        // clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 2,
+        // maskPosition: "0% -4.5vh",
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 3,
     }, "+=1");
 
 const index = 10000;
