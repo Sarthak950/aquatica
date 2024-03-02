@@ -158,8 +158,8 @@ loader.load(
             window.scrollTo(0, 0);
             console.log("loading done");
 
-            const loaderScreen = document.getElementById("loader");
-            loaderScreen.style.display = "none";
+            // const loaderScreen = document.getElementById("loader");
+            // loaderScreen.style.display = "none";
             // gsap.to(loaderScreen, {
             //     opacity: 0,
             //     duration: 3,

@@ -55,6 +55,20 @@ const gameTipsList = [
 ]
 
 const gameTips = document.getElementById("loaderTip");
-
-// inject a random tip into the gameTips 
+//
+// // inject a random tip into the gameTips 
 gameTips.innerHTML = gameTipsList[Math.floor(Math.random() * gameTipsList.length)];
+
+// check if all the assets are loaded 
+window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+
+    gsap.to(loader, {
+        opacity: 0,
+        duration: 1,
+        ease: "power2.inOut",
+        onComplete: () => {
+            loader.style.display = "none";
+        }
+    })
+})
