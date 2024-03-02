@@ -3,10 +3,10 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-let winCount = 30;
+let winCount = 14;
 // detect if the user is on mobile
 if (window.innerWidth < 768) {
-    winCount = 30;
+    winCount = 8;
 }
 
 const slidetimeline = gsap.timeline({

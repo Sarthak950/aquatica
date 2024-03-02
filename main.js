@@ -62,10 +62,12 @@ gameTips.innerHTML = gameTipsList[Math.floor(Math.random() * gameTipsList.length
 // check if all the assets are loaded 
 window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
+    
+    window.scrollTo(0, 0);
 
     gsap.to(loader, {
         opacity: 0,
-        duration: 1,
+        duration: 2,
         ease: "power2.inOut",
         onComplete: () => {
             loader.style.display = "none";
