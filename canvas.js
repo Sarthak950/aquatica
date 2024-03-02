@@ -1,7 +1,6 @@
 import * as THREE from "three";
 import gsap from "gsap";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-
 import { RGBELoader } from "three/addons/loaders/RGBELoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
@@ -136,7 +135,6 @@ RgbeLoader.load(texture, function (texture) {
     // scene.background = texture
     // texture.dispose();
 });
-const loaderScreen = document.getElementById("loader");
 loader.load(
     "finalModel/model.glb",
     function (gltf) {
@@ -154,19 +152,23 @@ loader.load(
         action.setLoop(THREE.LoopRepeat, Infinity); // Set the loop to repeat infinitely
     },
     function (xhr) {
-        // console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+        console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
         // check if loading is complete
         if ((xhr.loaded / xhr.total) * 100 === 100) {
             window.scrollTo(0, 0);
-            gsap.to(loaderScreen, {
-                opacity: 0,
-                duration: 3,
-                // ease: "power3.out",
-                onComplete: () => {
-                    loaderScreen.style.display = "none";
-                    // scroll to the top
-                },
-            });
+            console.log("loading done");
+
+            const loaderScreen = document.getElementById("loader");
+            loaderScreen.style.display = "none";
+            // gsap.to(loaderScreen, {
+            //     opacity: 0,
+            //     duration: 3,
+            //     // ease: "power3.out",
+            //     onComplete: () => {
+            //         // loaderScreen.style.display = "none";
+            //         // scroll to the top
+            //     },
+            // });
         }
     },
     function (error) {
@@ -394,22 +396,6 @@ camera.position.set(
 //         controls.enabled = false;
 //     }
 // });
-
-const skyboxGeometry = new THREE.BoxGeometry(1000, 1000, 1000);
-const skyboxMaterial = new THREE.MeshBasicMaterial({
-    map: new THREE.CubeTextureLoader().load([
-        "/Aquatica/skybox2/right.jpg",
-        "/Aquatica/skybox2/left.png",
-        "/Aquatica/skybox2/top.png",
-        "/Aquatica/skybox2/bottom.png",
-        "/Aquatica/skybox2/front.png",
-        "/Aquatica/skybox2/back.png",
-    ]),
-    side: THREE.BackSide, // Important for correctly rendering the inside of the cube
-});
-
-const skybox = new THREE.Mesh(skyboxGeometry, skyboxMaterial);
-scene.add(skybox);
 
 // Event listener for window resize
 function handleResize() {

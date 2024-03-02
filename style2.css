@@ -1,0 +1,210 @@
+.bgText {
+    width: 100vw;
+    text-align: center;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bgText>h1 {
+    font-family: "Gelex";
+    font-size: 100vh;
+    line-height: 100vh;
+    width: fit-content;
+    color: rgba(0, 0, 0, 0) !important;
+    -webkit-text-stroke: 4px white;
+    text-stroke: 4px white;
+    opacity: 0.1;
+}
+
+.socials {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.socialCon {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: fit-content;
+}
+
+.socialCon>h1,
+.socialCon>h1>span {
+    font-family: Anton;
+    font-size: 8rem;
+    line-height: 8rem;
+}
+
+.socialCon>h1>span {
+    background: -webkit-linear-gradient(var(--yellow), #000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.yellow {
+    color: var(--yellow);
+}
+
+.socialCon>form {
+    height: 8rem;
+}
+
+.socialCon>form {
+    border-radius: 0.5rem;
+    border: 3px solid var(--yellow);
+}
+
+.socialCon>form {
+    display: flex;
+}
+
+.socialCon>form>input {
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    padding-left: 5rem;
+    font-family: Anton;
+    font-size: 2.5rem;
+    letter-spacing: 0.4rem;
+    text-transform: uppercase;
+}
+
+.socialCon>form>button {
+    border: none;
+    background: var(--yellow);
+    font-family: Anton;
+    font-size: 2.5rem;
+    padding-inline: 6rem;
+}
+
+.links {
+    display: flex;
+
+    background: var(--yellow);
+    padding-block: 0.5rem;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.links>a {
+    text-decoration: none;
+}
+
+.links>a>img {
+    height: 2.5rem;
+}
+
+.modelTextCon {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+}
+
+.modelText {
+    opacity: 0;
+    padding: 1rem;
+    position: absolute;
+}
+
+.modelText>h1 {
+    font-family: Anton;
+    font-size: 7rem;
+    line-height: 7rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    color: var(--yellow);
+
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 1);
+
+    padding-inline: 0.5rem;
+    width: fit-content;
+}
+
+.modelText>p {
+    font-family: "Gelex";
+    font-size: 1.3rem;
+    width: 40vw;
+    line-height: 2rem;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--yellow);
+    text-wrap: pretty;
+    padding-inline: 0.5rem;
+    padding-block: 0.5rem;
+
+    border-radius: 10px 10px 0px 0px;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+#loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.loaderImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loaderImg>img:nth-child(1) {
+    animation: scale 2s linear infinite;
+}
+
+.loaderText {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    padding-block: 5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.loaderText>h1 {
+    font-family: Anton;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+}
+
+.loaderText>p {
+    font-family: "Gelex";
+    text-transform: capitalize;
+    font-size: 1.2rem;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
