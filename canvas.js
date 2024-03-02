@@ -87,14 +87,56 @@ canvas.height = 770;
 const airpods = {
     frame: 0,
 };
-slidetimeline.to(airpods, {
-    frame: frameCount - 1,
-    snap: "frame",
-    duration: 20,
-    ease: "power2.out",
-    onUpdate: render,
-});
 
+// Extend the duration to add time for fade-in and fade-out
+const totalAnimationDuration = 6;
+const frameTransitionDuration = totalAnimationDuration / frameCount;
+
+// slidetimeline.to(airpods, {
+//     frame: frameCount - 1,
+//     snap: "frame",
+//     duration: totalAnimationDuration,
+//     ease: "power2.out",
+//     onUpdate: render,
+//     repeat: 0,
+// });
+
+// Add animations between frames
+//
+let count = 0;
+
+const modelTextList = document.getElementsByClassName("modelText");
+for (let i = 0; i < frameCount - 1; i++) {
+    slidetimeline.to({}, {
+        duration: frameTransitionDuration,
+        onUpdate: function () {
+            console.log("Frame Count:", i); // Log the frame count during the animation
+            render(); // Assuming render is a function to update the view
+        },
+    }, `+=${frameTransitionDuration}`)
+        .to(airpods, {
+            frame: i + 1,
+            snap: "frame",
+            duration: frameTransitionDuration,
+            ease: "power2.out",
+            onUpdate: function () {
+                console.log("Frame Count:", i); // Log the frame count during the animation
+                render(); // Assuming render is a function to update the view
+            },
+        });
+
+    if (i === 25 || i === 61 || i === 93 || i === 151 || i === 176 || i === 215) {
+        slidetimeline.to(modelTextList[count], {
+            opacity: 1,
+            duration: 2,
+        }, "-=1")
+            .to(modelTextList[count], {
+                opacity: 0,
+                duration: 2,
+            }, "+=0.5");
+        count++;
+    }
+}
 images[0].onload = render;
 
 function render() {
