@@ -4,8 +4,11 @@
 }
 
 #canvas {
-    width: 100vw;
-    height: 100lvh;
+    background: black;
+    /* width: 100vw; */
+    height: 100vh;
+    /* // mak it 16: 9  */
+    width: 177.7777777778vh;
 }
 
 .heroSec {
@@ -183,6 +186,7 @@
 }
 
 .slide5 {
+    background: #182026;
     z-index: 500;
 }
 
