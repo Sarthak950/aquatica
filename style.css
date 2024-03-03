@@ -8,7 +8,9 @@
     /* width: 100vw; */
     height: 100vh;
     /* // mak it 16: 9  */
-    width: 177.7777777778vh;
+    /* width: 177.7777777778vh; */
+    /* make  it 16:8 */
+    width: 200vh;
 }
 
 .heroSec {
