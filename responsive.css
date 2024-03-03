@@ -23,6 +23,10 @@
         margin-top: 32rem;
         margin-left: 20rem;
     }
+
+    .catCard {
+        height: 35rem;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -574,10 +578,6 @@
         position: absolute;
         top: 0;
         left: 0;
-        mask: url("/Aquatica/mask.png");
-        mask-size: cover;
-        mask-repeat: no-repeat;
-        mask-position-y: 110vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -590,7 +590,5 @@
         margin-bottom: 3rem;
     }
 
-    .links>a>img {
-        height: 3rem;
-    }
+
 }
