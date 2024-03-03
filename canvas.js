@@ -115,7 +115,7 @@ const airpods = {
 };
 
 // Extend the duration to add time for fade-in and fade-out
-const totalAnimationDuration = 16;
+const totalAnimationDuration = 10;
 const frameTransitionDuration = totalAnimationDuration / frameCount;
 
 let count = 0;
@@ -135,7 +135,7 @@ function debounce(func, wait) {
 }
 
 // Step 2: Create a debounced version of your render function
-const debouncedRender = debounce(render, 1); // Adjust the wait time as needed
+const debouncedRender = debounce(render, 0); // Adjust the wait time as needed
 
 // Step 3: Use debouncedRender in your animations
 for (let i = 0; i < frameCount - 1; i++) {
