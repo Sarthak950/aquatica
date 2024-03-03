@@ -138,39 +138,39 @@ function debounce(func, wait) {
 const debouncedRender = debounce(render, 0); // Adjust the wait time as needed
 
 // Step 3: Use debouncedRender in your animations
-for (let i = 0; i < frameCount - 1; i++) {
-    slidetimeline.to({}, {
-        duration: frameTransitionDuration,
-        onUpdate: function () {
-            console.log("Frame Count:", i);
-            debouncedRender(); // Use the debounced render function
-        },
-    }, `+=${frameTransitionDuration}`)
-        .to(airpods, {
-            frame: i + 1,
-            snap: "frame",
-            duration: frameTransitionDuration,
-            onUpdate: function () {
-                console.log("Frame Count:", i);
-                debouncedRender(); // Use the debounced render function
-            },
-        });
+// for (let i = 0; i < frameCount - 1; i++) {
+//     slidetimeline.to({}, {
+//         duration: frameTransitionDuration,
+//         onUpdate: function () {
+//             console.log("Frame Count:", i);
+//             debouncedRender(); // Use the debounced render function
+//         },
+//     }, `+=${frameTransitionDuration}`)
+//         .to(airpods, {
+//             frame: i + 1,
+//             snap: "frame",
+//             duration: frameTransitionDuration,
+//             onUpdate: function () {
+//                 console.log("Frame Count:", i);
+//                 debouncedRender(); // Use the debounced render function
+//             },
+//         });
 
-    if (
-        i === 25 || i === 61 || i === 93 || i === 116 || i === 151 || i === 176 ||
-        i === 215
-    ) {
-        slidetimeline.to(modelTextList[count], {
-            opacity: 1,
-            duration: 2,
-        }, "-=1")
-            .to(modelTextList[count], {
-                opacity: 0,
-                duration: 2,
-            }, "+=0.5");
-        count++;
-    }
-}
+//     if (
+//         i === 25 || i === 61 || i === 93 || i === 116 || i === 151 || i === 176 ||
+//         i === 215
+//     ) {
+//         slidetimeline.to(modelTextList[count], {
+//             opacity: 1,
+//             duration: 2,
+//         }, "-=1")
+//             .to(modelTextList[count], {
+//                 opacity: 0,
+//                 duration: 2,
+//             }, "+=0.5");
+//         count++;
+//     }
+// }
 images[0].onload = render;
 
 function render() {
