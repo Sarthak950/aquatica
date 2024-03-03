@@ -15,7 +15,7 @@ gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
 });
 
-gsap.ticker.lagSmoothing(0);
+gsap.ticker.lagSmoothing(100);
 
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -40,7 +40,7 @@ slidetimeline
     .to("#slide1", {
         // maskPosition: "0% -4.5vh",
         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 3,
+        duration: 2,
     })
     .to(".contextText1", {
         opacity: 1,
@@ -49,7 +49,7 @@ slidetimeline
     .to("#slide2", {
         // maskPosition: "0% -4.5vh",
         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 3,
+        duration: 2,
     }, "+=1")
     .to(".contextText2", {
         opacity: 1,
@@ -58,8 +58,8 @@ slidetimeline
     .to("#slide3", {
         // maskPosition: "0% -4.5vh",
         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 3,
-    }, "+=1")
+        duration: 2,
+    }, "+=0")
     .to(".contextText3", {
         opacity: 1,
         duration: 1,
@@ -67,8 +67,8 @@ slidetimeline
     .to("#slide4", {
         // maskPosition: "0% -4.5vh",
         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 3,
-    }, "+=1")
+        duration: 2,
+    }, "+=0")
     .to(".contextText4", {
         opacity: 1,
         duration: 1,
@@ -77,7 +77,7 @@ slidetimeline
         // maskPosition: "0% -4.5vh",
         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         duration: 3,
-    }, "+=1");
+    }, "+=0");
 
 const index = 10000;
 const frameCount = 240;
@@ -119,7 +119,6 @@ const totalAnimationDuration = 10;
 const frameTransitionDuration = totalAnimationDuration / frameCount;
 
 let count = 0;
-
 const modelTextList = document.getElementsByClassName("modelText");
 // Step 1: Add the debounce function
 function debounce(func, wait) {
@@ -138,39 +137,53 @@ function debounce(func, wait) {
 const debouncedRender = debounce(render, 0); // Adjust the wait time as needed
 
 // Step 3: Use debouncedRender in your animations
-// for (let i = 0; i < frameCount - 1; i++) {
-//     slidetimeline.to({}, {
-//         duration: frameTransitionDuration,
-//         onUpdate: function () {
-//             console.log("Frame Count:", i);
-//             debouncedRender(); // Use the debounced render function
-//         },
-//     }, `+=${frameTransitionDuration}`)
-//         .to(airpods, {
-//             frame: i + 1,
-//             snap: "frame",
-//             duration: frameTransitionDuration,
-//             onUpdate: function () {
-//                 console.log("Frame Count:", i);
-//                 debouncedRender(); // Use the debounced render function
-//             },
-//         });
 
-//     if (
-//         i === 25 || i === 61 || i === 93 || i === 116 || i === 151 || i === 176 ||
-//         i === 215
-//     ) {
-//         slidetimeline.to(modelTextList[count], {
-//             opacity: 1,
-//             duration: 2,
-//         }, "-=1")
-//             .to(modelTextList[count], {
-//                 opacity: 0,
-//                 duration: 2,
-//             }, "+=0.5");
-//         count++;
-//     }
-// }
+
+const model = gsap.timeline({
+    scrollTrigger: {
+        trigger: "window",
+        start: "top top",
+        end: `+=${window.innerHeight * winCount}`,
+        scrub: true,
+        pin: true,
+        anticipatePin: 1,
+    },
+});
+
+
+for (let i = 0; i < frameCount - 1; i++) {
+    model.to({}, {
+        duration: frameTransitionDuration,
+        onUpdate: function () {
+            console.log("Frame Count:", i);
+            debouncedRender(); // Use the debounced render function
+        },
+    }, `+=${frameTransitionDuration}`)
+        .to(airpods, {
+            frame: i + 1,
+            snap: "frame",
+            duration: frameTransitionDuration,
+            onUpdate: function () {
+                console.log("Frame Count:", i);
+                debouncedRender(); // Use the debounced render function
+            },
+        });
+
+    if (
+        i === 25 || i === 61 || i === 93 || i === 116 || i === 151 || i === 176 ||
+        i === 215
+    ) {
+        slidetimeline.to(modelTextList[count], {
+            opacity: 1,
+            duration: 2,
+        }, "-=1")
+            .to(modelTextList[count], {
+                opacity: 0,
+                duration: 2,
+            }, "+=0.5");
+        count++;
+    }
+}
 images[0].onload = render;
 
 function render() {
