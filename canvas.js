@@ -125,7 +125,7 @@ for (let i = 0; i < frameCount - 1; i++) {
             },
         });
 
-    if (i === 25 || i === 61 || i === 93 || i === 151 || i === 176 || i === 215) {
+    if (i === 25 || i === 61 || i === 93 || i === 116 || i === 151 || i === 176 || i === 215) {
         slidetimeline.to(modelTextList[count], {
             opacity: 1,
             duration: 2,
