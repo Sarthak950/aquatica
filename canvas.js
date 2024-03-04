@@ -138,21 +138,19 @@ const debouncedRender = debounce(render, 0); // Adjust the wait time as needed
 
 // Step 3: Use debouncedRender in your animations
 
-
-const model = gsap.timeline({
-    scrollTrigger: {
-        trigger: "window",
-        start: "top top",
-        end: `+=${window.innerHeight * winCount}`,
-        scrub: true,
-        pin: true,
-        anticipatePin: 1,
-    },
-});
-
+// const model = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: "canvas",
+//         start: "top top",
+//         end: `+=${window.innerHeight * winCount}`,
+//         scrub: true,
+//         pin: true,
+//         anticipatePin: 1,
+//     },
+// });
 
 for (let i = 0; i < frameCount - 1; i++) {
-    model.to({}, {
+    slidetimeline.to({}, {
         duration: frameTransitionDuration,
         onUpdate: function () {
             console.log("Frame Count:", i);
