@@ -54,6 +54,15 @@ a:hover {
     z-index: 100000000;
 }
 
+nav {
+    position: fixed;
+    top: 0;
+    background: green;
+    z-index: 10000;
+}
+
+
+
 html.lenis {
     height: auto;
 }

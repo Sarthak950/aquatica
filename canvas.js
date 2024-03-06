@@ -1,12 +1,17 @@
 import gsap from "gsap";
 import Lenis from "@studio-freight/lenis";
 const lenis = new Lenis({
-    duration: 1.2,
-    // easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    duration: 0.5,
+    // easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+    direction: "vertical",
+    gestureDirection: "vertical",
+    // smooth: true,
+    smoothTouch: false,
+    touchMultiplier: 0.1,
 });
 
 lenis.on("scroll", (e) => {
-    console.log(e)
+    // console.log(e);
 });
 
 lenis.on("scroll", ScrollTrigger.update);
@@ -153,7 +158,7 @@ for (let i = 0; i < frameCount - 1; i++) {
     slidetimeline.to({}, {
         duration: frameTransitionDuration,
         onUpdate: function () {
-            console.log("Frame Count:", i);
+            // console.log("Frame Count:", i);
             debouncedRender(); // Use the debounced render function
         },
     }, `+=${frameTransitionDuration}`)
@@ -162,7 +167,7 @@ for (let i = 0; i < frameCount - 1; i++) {
             snap: "frame",
             duration: frameTransitionDuration,
             onUpdate: function () {
-                console.log("Frame Count:", i);
+                // console.log("Frame Count:", i);
                 debouncedRender(); // Use the debounced render function
             },
         });
@@ -209,3 +214,25 @@ function render() {
     context.drawImage(img, offsetX, offsetY, scaledWidth, scaledHeight);
     // context.drawImage(img, offX, offY, img.width, img.height);
 }
+
+slidetimeline
+    .to("#slide6", {
+        // maskposition: "0% -4.5vh",
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 3,
+    }, "+=0")
+    .to("#slide7", {
+        // maskposition: "0% -4.5vh",
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 3,
+    }, "+=0")
+    .to("#slide8", {
+        // maskposition: "0% -4.5vh",
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 3,
+    }, "+=0")
+    .to("#slide9", {
+        // maskposition: "0% -4.5vh",
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 3,
+    }, "+=0");

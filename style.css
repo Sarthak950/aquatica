@@ -160,8 +160,8 @@
     top: 0;
     left: 0;
     clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
-    will-change: scroll-position;
-    perspective: 1000px;
+    /* will-change: scroll-position; */
+    /* perspective: 1000px; */
     /* mask: url("/Aquatica/mask4.webp"); */
     /* mask-size: 100% auto; */
     /* mask-size: 100vh 100vw; */
@@ -199,8 +199,26 @@
 
 .slide5 {
     background: #172832;
-    /* background: #182026; */
     z-index: 500;
+}
+
+.slide6 {
+    z-index: 600;
+}
+
+.slide7 {
+    z-index: 700;
+    background: black;
+}
+
+.slide8 {
+    z-index: 800;
+    background: black;
+}
+
+.slide9 {
+    z-index: 900;
+    background: black;
 }
 
 .contextText {

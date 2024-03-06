@@ -67,8 +67,8 @@ window.addEventListener("load", () => {
 
     gsap.to(loader, {
         opacity: 0,
-        duration: 2,
-        ease: "power2.inOut",
+        duration: 1,
+        ease: "power2.in",
         onComplete: () => {
             loader.style.display = "none";
         }
