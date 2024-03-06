@@ -128,7 +128,7 @@
 .hollow {
     color: rgba(0, 0, 0, 0) !important;
     -webkit-text-stroke: 1px var(--yellow);
-    text-stroke: 1px var(--yellow);
+    /* text-stroke: 1px var(--yellow); */
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
@@ -159,7 +159,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    --webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
     /* will-change: scroll-position; */
     /* perspective: 1000px; */
     /* mask: url("/Aquatica/mask4.webp"); */
@@ -248,7 +248,7 @@
 
     color: rgba(0, 0, 0, 0) !important;
     -webkit-text-stroke: 5px var(--yellow);
-    text-stroke: 5px var(--yellow);
+    /* text-stroke: 5px var(--yellow); */
 }
 
 .contextText>div>h1 {
@@ -324,7 +324,7 @@
     letter-spacing: 2rem;
     color: rgba(0, 0, 0, 0) !important;
     -webkit-text-stroke: 1px var(--yellow);
-    text-stroke: 1px var(--yellow);
+    /* text-stroke: 1px var(--yellow); */
     opacity: 0.5;
 }
 
