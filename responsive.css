@@ -415,6 +415,18 @@
 }
 
 @media (max-width: 575.98px) {
+
+    body{
+        height: 100lvh;
+    }
+
+    .slide {
+        height: 100lvh !important;
+    }
+
+    .heroImg {
+        height: 100lvh;
+    }
     .thecomicCon>img {
         width: 70vw;
     }
