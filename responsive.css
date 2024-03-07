@@ -275,8 +275,9 @@
     }
 
     .thecomicCon>img {
-        width:40vw;
+        width: 40vw;
     }
+
     .loreText {
         align-items: center;
     }
@@ -415,8 +416,9 @@
 
 @media (max-width: 575.98px) {
     .thecomicCon>img {
-        width:70vw;
+        width: 70vw;
     }
+
     .contextText2 {
         margin-top: 22rem;
         margin-left: 0rem;
@@ -572,7 +574,7 @@
 
     .slide {
         width: 100vw;
-        height: 100lvh;
+        height: 100svh;
         overflow: hidden;
         position: relative;
         position: absolute;
@@ -582,6 +584,9 @@
         justify-content: center;
         align-items: center;
     }
+    .socials {
+        height: 100svh;
+    }
 
     .curosolTitle {
         text-align: center;
@@ -589,6 +594,4 @@
         letter-spacing: 0.5rem;
         margin-bottom: 3rem;
     }
-
-
 }

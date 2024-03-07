@@ -11,7 +11,11 @@
 }
 
 html {
-    overflow-x: hidden;
+    overflow: hidden;
+    height: 100svh;
+
+
+    background-color: var(--background-color);
 }
 
 :root {
@@ -60,8 +64,6 @@ nav {
     background: green;
     z-index: 10000;
 }
-
-
 
 html.lenis {
     height: auto;
