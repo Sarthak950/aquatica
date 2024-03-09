@@ -1,30 +1,30 @@
 import gsap from "gsap";
 import Lenis from "@studio-freight/lenis";
-const lenis = new Lenis({
-    duration: 0.2,
-    // easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
-    // direction: "vertical",
-    // gestureDirection: "vertical",
-    // smooth: true,
-    // smoothTouch: true,
-    // touchMultiplier: 0.1,
-});
-
-lenis.on("scroll", (e) => {
-    // console.log(e);
-});
-
-lenis.on("scroll", ScrollTrigger.update);
-
-gsap.ticker.add((time) => {
-    lenis.raf(time * 100);
-});
-
-gsap.ticker.lagSmoothing(0);
-
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-
+// const lenis = new Lenis({
+//     duration: 0.2,
+//     // easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+//     // direction: "vertical",
+//     // gestureDirection: "vertical",
+//     // smooth: true,
+//     // smoothTouch: true,
+//     // touchMultiplier: 0.1,
+// });
+//
+// lenis.on("scroll", (e) => {
+//     console.log(e.actualScroll)
+//     // console.log(e);
+// });
+//
+// lenis.on("scroll", ScrollTrigger.update);
+//
+// gsap.ticker.add((time) => {
+//     lenis.raf(time * 100);
+// });
+//
+// gsap.ticker.lagSmoothing(0);
+//
 let winCount = 20;
 let isMob = false;
 // detect if the user is on mobile
@@ -128,7 +128,7 @@ const airpods = {
 
 // Extend the duration to add time for fade-in and fade-out
 const totalAnimationDuration = 10;
-const frameTransitionDuration = totalAnimationDuration / frameCount;
+let frameTransitionDuration = totalAnimationDuration / frameCount;
 
 let count = 0;
 const modelTextList = document.getElementsByClassName("modelText");
@@ -199,24 +199,15 @@ images[0].onload = render;
 
 if (isMob) {
     const mobTimeline = gsap.timeline({
-        scrollTrigger: {
-            scroller: "#slide5",
-            trigger: "#canvas",
-            start: "top 0%",
-            // end: "top -200%",
-            end: `+=${window.innerHeight * winCount}`,
-            scrub: true,
-            pin: true,
-            anticipatePin: 1,
-            markers: true
-        },
+        // check f
+        paused: true,
     });
 
     for (let i = 0; i < frameCount - 1; i++) {
         mobTimeline.to({}, {
             duration: frameTransitionDuration,
             onUpdate: function () {
-                // console.log("Frame Count:", i);
+                console.log("Frame Count:", i);
                 debouncedRender(); // Use the debounced render function
             },
         }, `+=${frameTransitionDuration}`)
@@ -225,7 +216,7 @@ if (isMob) {
                 snap: "frame",
                 duration: frameTransitionDuration,
                 onUpdate: function () {
-                    // console.log("Frame Count:", i);
+                    console.log("Frame Count:", i);
                     debouncedRender(); // Use the debounced render function
                 },
             });
@@ -234,17 +225,52 @@ if (isMob) {
             i === 25 || i === 61 || i === 93 || i === 116 || i === 151 || i === 176 ||
             i === 215
         ) {
-            mobTimeline.to(modelTextList[count], {
-                opacity: 1,
-                duration: 2,
-            }, "-=1")
+            mobTimeline
+                .to(modelTextList[count], {
+                    opacity: 1,
+                    duration: 2,
+                }, "-=1")
                 .to(modelTextList[count], {
                     opacity: 0,
-                    duration: 2,
+                    duration: 1,
                 }, "+=0.5");
             count++;
         }
     }
+
+    const observer2 = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                console.log("enters")
+                mobTimeline.play();
+                // entry.target.classList.add("show");
+            } else {
+                console.log("exits")
+                mobTimeline.pause();
+                // entry.target.classList.remove("show");
+            }
+        });
+    });
+    const hiddenElements2 = document.querySelectorAll("#canvas");
+    hiddenElements2.forEach((el) => observer2.observe(el));
+
+    // // play the timeline when the canvas intersect with the view
+    // function handleEntry(entry, observer) {
+    //     if (entry.isIntersecting) {
+    //         console.log("Element has entered the viewport!");
+    //         // You can perform additional actions here
+    //     }
+    // }
+    //
+    // // Create an Intersection Observer
+    // const observer = new IntersectionObserver(handleEntry);
+    //
+    // // Target the element to be observed
+    // const targetElement = document.getElementById("slide5");
+    // console.log(targetElement)
+    //
+    // // Start observing the target element
+    // observer.observe(targetElement);
 }
 
 function render() {
@@ -275,25 +301,26 @@ function render() {
         context.drawImage(img, offsetX, offsetY, scaledWidth, scaledHeight);
     }
 }
-
-slidetimeline
-    .to("#slide6", {
-        // maskposition: "0% -4.5vh",
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 3,
-    }, "+=0")
-    .to("#slide7", {
-        // maskposition: "0% -4.5vh",
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 3,
-    }, "+=0")
-    .to("#slide8", {
-        // maskposition: "0% -4.5vh",
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 3,
-    }, "+=0")
-    .to("#slide9", {
-        // maskposition: "0% -4.5vh",
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 3,
-    }, "+=0");
+if (!isMob) {
+    slidetimeline
+        .to("#slide6", {
+            // maskposition: "0% -4.5vh",
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: 3,
+        }, "+=0")
+        .to("#slide7", {
+            // maskposition: "0% -4.5vh",
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: 3,
+        }, "+=0")
+        .to("#slide8", {
+            // maskposition: "0% -4.5vh",
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: 3,
+        }, "+=0")
+        .to("#slide9", {
+            // maskposition: "0% -4.5vh",
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: 3,
+        }, "+=0");
+}
