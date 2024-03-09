@@ -226,6 +226,11 @@
         padding-right: 0.5rem;
     }
 
+    .catCard:hover>div>h1 {
+        transform: rotate(0deg) translateX(0rem) translateY(0%)!important;
+        transform-origin: 0% -50%!important;
+    }
+
     .activeCard>p {
         opacity: 0.8;
         margin-top: 1rem;
@@ -415,18 +420,26 @@
 }
 
 @media (max-width: 575.98px) {
-
-    body{
+    body {
         height: 100lvh;
     }
 
     .slide {
         height: 100lvh !important;
+        position: relative !important;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        /* padding-inline: 1rem; */
+    }
+
+    .contextText {
+        opacity: 1 !important;
     }
 
     .heroImg {
         height: 100lvh;
     }
+
     .thecomicCon>img {
         width: 70vw;
     }
@@ -596,13 +609,14 @@
         justify-content: center;
         align-items: center;
     }
+
     .socials {
         height: 100svh;
     }
 
     .curosolTitle {
         text-align: center;
-        font-size: 4rem;
+        font-size: 3rem;
         letter-spacing: 0.5rem;
         margin-bottom: 3rem;
     }

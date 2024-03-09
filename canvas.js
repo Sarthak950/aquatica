@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import Lenis from "@studio-freight/lenis";
 const lenis = new Lenis({
-    duration: 4.2,
+    duration: 0.2,
     // easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
     // direction: "vertical",
     // gestureDirection: "vertical",
@@ -43,48 +43,51 @@ const slidetimeline = gsap.timeline({
         anticipatePin: 1,
     },
 });
-slidetimeline
-    .to("#slide1", {
-        // maskPosition: "0% -4.5vh",
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 2,
-    })
-    .to(".contextText1", {
-        opacity: 1,
-        duration: 1,
-    }, "-=1.5")
-    .to("#slide2", {
-        // maskPosition: "0% -4.5vh",
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 2,
-    }, "+=1")
-    .to(".contextText2", {
-        opacity: 1,
-        duration: 1,
-    }, "-=1.5")
-    .to("#slide3", {
-        // maskPosition: "0% -4.5vh",
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 2,
-    }, "+=0")
-    .to(".contextText3", {
-        opacity: 1,
-        duration: 1,
-    }, "-=1.5")
-    .to("#slide4", {
-        // maskPosition: "0% -4.5vh",
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 2,
-    }, "+=0")
-    .to(".contextText4", {
-        opacity: 1,
-        duration: 1,
-    }, "-=1.5")
-    .to("#slide5", {
-        // maskPosition: "0% -4.5vh",
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 3,
-    }, "+=0");
+
+if (!isMob) {
+    slidetimeline
+        .to("#slide1", {
+            // maskPosition: "0% -4.5vh",
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: 2,
+        })
+        .to(".contextText1", {
+            opacity: 1,
+            duration: 1,
+        }, "-=1.5")
+        .to("#slide2", {
+            // maskPosition: "0% -4.5vh",
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: 2,
+        }, "+=1")
+        .to(".contextText2", {
+            opacity: 1,
+            duration: 1,
+        }, "-=1.5")
+        .to("#slide3", {
+            // maskPosition: "0% -4.5vh",
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: 2,
+        }, "+=0")
+        .to(".contextText3", {
+            opacity: 1,
+            duration: 1,
+        }, "-=1.5")
+        .to("#slide4", {
+            // maskPosition: "0% -4.5vh",
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: 2,
+        }, "+=0")
+        .to(".contextText4", {
+            opacity: 1,
+            duration: 1,
+        }, "-=1.5")
+        .to("#slide5", {
+            // maskPosition: "0% -4.5vh",
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: 3,
+        }, "+=0");
+}
 
 const index = 10000;
 const frameCount = 240;
@@ -157,41 +160,92 @@ const debouncedRender = debounce(render, 0); // Adjust the wait time as needed
 //         anticipatePin: 1,
 //     },
 // });
-
-for (let i = 0; i < frameCount - 1; i++) {
-    slidetimeline.to({}, {
-        duration: frameTransitionDuration,
-        onUpdate: function () {
-            // console.log("Frame Count:", i);
-            debouncedRender(); // Use the debounced render function
-        },
-    }, `+=${frameTransitionDuration}`)
-        .to(airpods, {
-            frame: i + 1,
-            snap: "frame",
+if (!isMob) {
+    for (let i = 0; i < frameCount - 1; i++) {
+        slidetimeline.to({}, {
             duration: frameTransitionDuration,
             onUpdate: function () {
                 // console.log("Frame Count:", i);
                 debouncedRender(); // Use the debounced render function
             },
-        });
+        }, `+=${frameTransitionDuration}`)
+            .to(airpods, {
+                frame: i + 1,
+                snap: "frame",
+                duration: frameTransitionDuration,
+                onUpdate: function () {
+                    // console.log("Frame Count:", i);
+                    debouncedRender(); // Use the debounced render function
+                },
+            });
 
-    if (
-        i === 25 || i === 61 || i === 93 || i === 116 || i === 151 || i === 176 ||
-        i === 215
-    ) {
-        slidetimeline.to(modelTextList[count], {
-            opacity: 1,
-            duration: 2,
-        }, "-=1")
-            .to(modelTextList[count], {
-                opacity: 0,
+        if (
+            i === 25 || i === 61 || i === 93 || i === 116 || i === 151 || i === 176 ||
+            i === 215
+        ) {
+            slidetimeline.to(modelTextList[count], {
+                opacity: 1,
                 duration: 2,
-            }, "+=0.5");
-        count++;
+            }, "-=1")
+                .to(modelTextList[count], {
+                    opacity: 0,
+                    duration: 2,
+                }, "+=0.5");
+            count++;
+        }
     }
 }
 images[0].onload = render;
+
+if (isMob) {
+    const mobTimeline = gsap.timeline({
+        scrollTrigger: {
+            scroller: "#slide5",
+            trigger: "#canvas",
+            start: "top 0%",
+            // end: "top -200%",
+            end: `+=${window.innerHeight * winCount}`,
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            markers: true
+        },
+    });
+
+    for (let i = 0; i < frameCount - 1; i++) {
+        mobTimeline.to({}, {
+            duration: frameTransitionDuration,
+            onUpdate: function () {
+                // console.log("Frame Count:", i);
+                debouncedRender(); // Use the debounced render function
+            },
+        }, `+=${frameTransitionDuration}`)
+            .to(airpods, {
+                frame: i + 1,
+                snap: "frame",
+                duration: frameTransitionDuration,
+                onUpdate: function () {
+                    // console.log("Frame Count:", i);
+                    debouncedRender(); // Use the debounced render function
+                },
+            });
+
+        if (
+            i === 25 || i === 61 || i === 93 || i === 116 || i === 151 || i === 176 ||
+            i === 215
+        ) {
+            mobTimeline.to(modelTextList[count], {
+                opacity: 1,
+                duration: 2,
+            }, "-=1")
+                .to(modelTextList[count], {
+                    opacity: 0,
+                    duration: 2,
+                }, "+=0.5");
+            count++;
+        }
+    }
+}
 
 function render() {
     context.clearRect(0, 0, canvas.width, canvas.height);
