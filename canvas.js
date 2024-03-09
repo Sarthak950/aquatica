@@ -1,13 +1,13 @@
 import gsap from "gsap";
 import Lenis from "@studio-freight/lenis";
 const lenis = new Lenis({
-    duration: 0.5,
+    duration: 4.2,
     // easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
-    direction: "vertical",
-    gestureDirection: "vertical",
+    // direction: "vertical",
+    // gestureDirection: "vertical",
     // smooth: true,
-    smoothTouch: false,
-    touchMultiplier: 0.1,
+    // smoothTouch: true,
+    // touchMultiplier: 0.1,
 });
 
 lenis.on("scroll", (e) => {
@@ -26,9 +26,11 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 let winCount = 20;
+let isMob = false;
 // detect if the user is on mobile
 if (window.innerWidth < 768) {
-    winCount = 15;
+    winCount = 27;
+    isMob = true;
 }
 
 const slidetimeline = gsap.timeline({
@@ -87,7 +89,9 @@ slidetimeline
 const index = 10000;
 const frameCount = 240;
 const currentFrame = (index) => (
-    `/Aquatica/Renders/Char_Turn_Around${(10000 + index).toString()}.webp`
+    `/Aquatica/Renders${isMob ? "Mob" : ""}/Char_Turn_Around${(10000 + index).toString()
+    }.webp`
+    // `/Aquatica/Renders/Char_Turn_Around${(10000 + index).toString()}.webp`
 );
 
 // Example usage:
@@ -211,8 +215,11 @@ function render() {
     const offX = (canvas.width - img.width) / 2;
     const offY = (canvas.height - img.height) / 2;
     // Draw the scaled and centered image
-    context.drawImage(img, offsetX, offsetY, scaledWidth, scaledHeight);
-    // context.drawImage(img, offX, offY, img.width, img.height);
+    if (isMob) {
+        context.drawImage(img, offX, offY, img.width, img.height);
+    } else {
+        context.drawImage(img, offsetX, offsetY, scaledWidth, scaledHeight);
+    }
 }
 
 slidetimeline
