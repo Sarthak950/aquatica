@@ -2,29 +2,30 @@ import gsap from "gsap";
 import Lenis from "@studio-freight/lenis";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-// const lenis = new Lenis({
-//     duration: 0.2,
-//     // easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
-//     // direction: "vertical",
-//     // gestureDirection: "vertical",
-//     // smooth: true,
-//     // smoothTouch: true,
-//     // touchMultiplier: 0.1,
-// });
-//
-// lenis.on("scroll", (e) => {
-//     console.log(e.actualScroll)
-//     // console.log(e);
-// });
-//
-// lenis.on("scroll", ScrollTrigger.update);
-//
-// gsap.ticker.add((time) => {
-//     lenis.raf(time * 100);
-// });
-//
-// gsap.ticker.lagSmoothing(0);
-//
+const lenis = new Lenis({
+    duration: 0.2,
+    // easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+    // direction: "vertical",
+    // gestureDirection: "vertical",
+    // smooth: true,
+    // smoothTouch: true,
+    // touchMultiplier: 0.1,
+});
+
+if (!isMob) {
+    lenis.on("scroll", (e) => {
+        console.log(e.actualScroll);
+        // console.log(e);
+    });
+
+    lenis.on("scroll", ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+        lenis.raf(time * 100);
+    });
+
+    gsap.ticker.lagSmoothing(0);
+}
 let winCount = 20;
 let isMob = false;
 // detect if the user is on mobile
@@ -241,11 +242,11 @@ if (isMob) {
     const observer2 = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                console.log("enters")
+                console.log("enters");
                 mobTimeline.play();
                 // entry.target.classList.add("show");
             } else {
-                console.log("exits")
+                console.log("exits");
                 mobTimeline.pause();
                 // entry.target.classList.remove("show");
             }
