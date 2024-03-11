@@ -1,3 +1,10 @@
+@media (max-width: 1700px) {
+    .heroTitle>h1 {
+        font-size: 9rem;
+        letter-spacing: 0.5rem;
+    }
+}
+
 @media (max-width: 1500px) {
     .heroTitle>h1 {
         font-size: 8rem;

@@ -1,3 +1,10 @@
+let winCount = 20;
+let isMob = false;
+// detect if the user is on mobile
+if (window.innerWidth < 768) {
+    winCount = 27;
+    isMob = true;
+}
 import gsap from "gsap";
 import Lenis from "@studio-freight/lenis";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -25,13 +32,6 @@ if (!isMob) {
     });
 
     gsap.ticker.lagSmoothing(0);
-}
-let winCount = 20;
-let isMob = false;
-// detect if the user is on mobile
-if (window.innerWidth < 768) {
-    winCount = 27;
-    isMob = true;
 }
 
 const slidetimeline = gsap.timeline({
