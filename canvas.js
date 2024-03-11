@@ -9,17 +9,17 @@ import gsap from "gsap";
 import Lenis from "@studio-freight/lenis";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-const lenis = new Lenis({
-    duration: 0.2,
-    // easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
-    // direction: "vertical",
-    // gestureDirection: "vertical",
-    // smooth: true,
-    // smoothTouch: true,
-    // touchMultiplier: 0.1,
-});
 
 if (!isMob) {
+    const lenis = new Lenis({
+        duration: 0.2,
+        // easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+        // direction: "vertical",
+        // gestureDirection: "vertical",
+        // smooth: true,
+        // smoothTouch: true,
+        // touchMultiplier: 0.1,
+    });
     lenis.on("scroll", (e) => {
         console.log(e.actualScroll);
         // console.log(e);
@@ -146,28 +146,15 @@ function debounce(func, wait) {
     };
 }
 
-// Step 2: Create a debounced version of your render function
-const debouncedRender = debounce(render, 0); // Adjust the wait time as needed
+const debouncedRender = debounce(render, 0);
 
-// Step 3: Use debouncedRender in your animations
-
-// const model = gsap.timeline({
-//     scrollTrigger: {
-//         trigger: "canvas",
-//         start: "top top",
-//         end: `+=${window.innerHeight * winCount}`,
-//         scrub: true,
-//         pin: true,
-//         anticipatePin: 1,
-//     },
-// });
 if (!isMob) {
     for (let i = 0; i < frameCount - 1; i++) {
         slidetimeline.to({}, {
             duration: frameTransitionDuration,
             onUpdate: function () {
                 // console.log("Frame Count:", i);
-                debouncedRender(); // Use the debounced render function
+                // debouncedRender(); // Use the debounced render function
             },
         }, `+=${frameTransitionDuration}`)
             .to(airpods, {
@@ -199,8 +186,8 @@ if (!isMob) {
 images[0].onload = render;
 
 if (isMob) {
+    frameTransitionDuration *= 0.5;
     const mobTimeline = gsap.timeline({
-        // check f
         paused: true,
     });
 
@@ -254,24 +241,6 @@ if (isMob) {
     });
     const hiddenElements2 = document.querySelectorAll("#canvas");
     hiddenElements2.forEach((el) => observer2.observe(el));
-
-    // // play the timeline when the canvas intersect with the view
-    // function handleEntry(entry, observer) {
-    //     if (entry.isIntersecting) {
-    //         console.log("Element has entered the viewport!");
-    //         // You can perform additional actions here
-    //     }
-    // }
-    //
-    // // Create an Intersection Observer
-    // const observer = new IntersectionObserver(handleEntry);
-    //
-    // // Target the element to be observed
-    // const targetElement = document.getElementById("slide5");
-    // console.log(targetElement)
-    //
-    // // Start observing the target element
-    // observer.observe(targetElement);
 }
 
 function render() {
@@ -297,6 +266,7 @@ function render() {
     const offY = (canvas.height - img.height) / 2;
     // Draw the scaled and centered image
     if (isMob) {
+        // context.drawImage(img, offX, offY, img.width, img.height);
         context.drawImage(img, offX, offY, img.width, img.height);
     } else {
         context.drawImage(img, offsetX, offsetY, scaledWidth, scaledHeight);

@@ -506,7 +506,7 @@
 
     transition: all 0.3s ease;
 
-    transform: rotate(-90deg) translateX(-9rem) translateY(-30%);
+    transform: rotate(-90deg) translateX(-9rem) translateY(-40%);
     transform-origin: 0% -100%;
 }
 
