@@ -65,6 +65,45 @@ nav {
     z-index: 10000;
 }
 
+.catCard1 {
+  background: url("/Aquatica/cat/1.png");
+}
+
+.catCard2 {
+  background: url("/Aquatica/cat/2.png");
+}
+.catCard3 {
+  background: url("/Aquatica/cat/3.png");
+}
+.catCard4 {
+  background: url("/Aquatica/cat/4.png");
+}
+.catCard5 {
+  background: url("/Aquatica/cat/5.png");
+}
+.catCard6 {
+  background: url("/Aquatica/cat/6.png");
+}
+.catCard7 {
+  background: url("/Aquatica/cat/7.png");
+}
+.catCard8 {
+  background: url("/Aquatica/cat/8.png");
+}
+
+.catCard9 {
+  background: url("/Aquatica/cat/9.png");
+}
+.catCard10 {
+  background: url("/Aquatica/cat/10.png");
+}
+.catCard11 {
+  background: url("/Aquatica/cat/11.png");
+}
+
+
+
+/* // lenis code  */
 html.lenis {
     height: auto;
 }
