@@ -1,3 +1,77 @@
+import gsap from "gsap";
+import Lenis from "@studio-freight/lenis";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
+let addClass
+
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        const navElements = document.getElementsByClassName("navLink")
+        addClass = (number) => {
+            for (let i = 0; i < navElements.length; i++) {
+                if (navElements[i].classList.contains("activeNavCom")) {
+                    navElements[i].classList.remove("activeNavCom");
+                }
+            }
+            navElements[number].classList.add("activeNavCom");
+        }
+        const removeClass = (number) => {
+            navElements[number].classList.remove("activeNavCom");
+        }
+
+        const Observer1 = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    addClass(2)
+                } else {
+                    removeClass(2)
+                }
+            });
+        });
+        const curosol = document.querySelectorAll(".curosolTitle");
+        curosol.forEach((el) => Observer1.observe(el));
+
+        const Observer2 = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    addClass(3)
+                } else {
+                    removeClass(3)
+                }
+            });
+        });
+        const curoso2 = document.querySelectorAll("#LORE");
+        curoso2.forEach((el) => Observer2.observe(el));
+
+
+        const Observer3 = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    addClass(4)
+                } else {
+                    removeClass(4)
+                }
+            });
+        });
+        const curoso3 = document.querySelectorAll("#NFT");
+        curoso3.forEach((el) => Observer3.observe(el));
+
+        const Observer4 = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    addClass(5)
+                } else {
+                    removeClass(5)
+                }
+            });
+        });
+        const curoso4 = document.querySelectorAll("#socials");
+        curoso4.forEach((el) => Observer4.observe(el));
+
+    }, 1000)
+})
+
 let winCount = 12;
 let isMob = false;
 // detect if the user is on mobile
@@ -5,24 +79,12 @@ if (window.innerWidth < 768) {
     winCount = 27;
     isMob = true;
 }
-import gsap from "gsap";
-import Lenis from "@studio-freight/lenis";
-import ScrollTrigger from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
-
 if (!isMob) {
     const lenis = new Lenis({
         duration: 0.2,
-        // content: document.getElementById("page"),
-        // easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
-        // direction: "vertical",
-        // gestureDirection: "vertical",
-        // smooth: true,
-        // smoothTouch: true,
-        // touchMultiplier: 0.1,
     });
     lenis.on("scroll", (e) => {
-        console.log(e.actualScroll);
+        // console.log(e.actualScroll);
         // console.log(e);
     });
 
@@ -88,6 +150,9 @@ if (!isMob) {
             // maskPosition: "0% -4.5vh",
             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
             duration: 3,
+            onComplete: () => {
+                addClass(1)
+            }
         }, "+=0");
 }
 
@@ -129,7 +194,7 @@ const airpods = {
 };
 
 // Extend the duration to add time for fade-in and fade-out
-const totalAnimationDuration = 10;
+const totalAnimationDuration = 7;
 let frameTransitionDuration = totalAnimationDuration / frameCount;
 
 let count = 0;
@@ -196,7 +261,7 @@ if (isMob) {
         mobTimeline.to({}, {
             duration: frameTransitionDuration,
             onUpdate: function () {
-                console.log("Frame Count:", i);
+                // console.log("Frame Count:", i);
                 debouncedRender(); // Use the debounced render function
             },
         }, `+=${frameTransitionDuration}`)
@@ -205,7 +270,7 @@ if (isMob) {
                 snap: "frame",
                 duration: frameTransitionDuration,
                 onUpdate: function () {
-                    console.log("Frame Count:", i);
+                    // console.log("Frame Count:", i);
                     debouncedRender(); // Use the debounced render function
                 },
             });
@@ -230,11 +295,9 @@ if (isMob) {
     const observer2 = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                console.log("enters");
                 mobTimeline.play();
                 // entry.target.classList.add("show");
             } else {
-                console.log("exits");
                 mobTimeline.pause();
                 // entry.target.classList.remove("show");
             }
@@ -273,6 +336,8 @@ function render() {
         context.drawImage(img, offsetX, offsetY, scaledWidth, scaledHeight);
     }
 }
+
+
 // if (!isMob) {
 //     slidetimeline
 //         .to("#slide6", {

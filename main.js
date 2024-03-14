@@ -62,14 +62,18 @@ gameTips.innerHTML = gameTipsList[Math.floor(Math.random() * gameTipsList.length
 // check if all the assets are loaded 
 window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
-    
+
     window.scrollTo(0, 0);
 
     gsap.to(loader, {
         opacity: 0,
         duration: 1,
         ease: "power2.in",
+        onStart: () => {
+            addNav()
+        },
         onComplete: () => {
+
             loader.style.display = "none";
         }
     })
@@ -77,20 +81,85 @@ window.addEventListener("load", () => {
 
 
 const handleSubmit = (event) => {
-  event.preventDefault();
+    event.preventDefault();
 
-  const myForm = event.target;
-  const formData = new FormData(myForm);
-  
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString(),
-  })
-    .then(() => alert("Thank you We will get back to you soon.!"))
-    .catch((error) => alert(error));
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+
+    fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+    })
+        .then(() => alert("Thank you We will get back to you soon.!"))
+        .catch((error) => alert(error));
 };
 
 document
-  .querySelector("form")
-  .addEventListener("submit", handleSubmit);
+    .querySelector("form")
+    .addEventListener("submit", handleSubmit);
+
+
+
+const addNav = () => {
+    const nav = document.createElement("nav");
+    nav.innerHTML = `
+    <div class="navCon">
+        <div title="Top" class="navLink" id="topScroll"></div>
+        <div title="Astro Kid" class="navLink" id="charScroll"></div>
+        <div title="Path" class="navLink" id="pathScroll"></div>
+        <div title="Lore" class="navLink" id="comicScroll"></div>
+        <div title="NFT's" class="navLink" id="nftScroll"></div>
+        <div title="Know Us" class="navLink" id="bottomScroll"></div>
+    </div>
+    `;
+    document.getElementsByClassName("pin-spacer")[0].appendChild(nav)
+    document.getElementById("topScroll").addEventListener("click", (e) => {
+        e.preventDefault()
+        console.log("click")
+        window.scrollTo({
+            top: window.innerHeight * 0,
+            behavior: "smooth"
+        })
+    })
+    document.getElementById("nftScroll").addEventListener("click", (e) => {
+        e.preventDefault()
+        console.log("click")
+        window.scrollTo({
+            top: window.innerHeight * 15,
+            behavior: "smooth"
+        })
+    })
+    document.getElementById("comicScroll").addEventListener("click", (e) => {
+        e.preventDefault()
+        console.log("click")
+        window.scrollTo({
+            top: window.innerHeight * 14,
+            behavior: "smooth"
+        })
+    })
+    document.getElementById("pathScroll").addEventListener("click", (e) => {
+        e.preventDefault()
+        console.log("click")
+        window.scrollTo({
+            top: window.innerHeight * 13,
+            behavior: "smooth"
+        })
+    })
+    document.getElementById("charScroll").addEventListener("click", (e) => {
+        e.preventDefault()
+        console.log("click")
+        window.scrollTo({
+            top: window.innerHeight * 2.5,
+            behavior: "smooth"
+        })
+    })
+    document.getElementById("bottomScroll").addEventListener("click", (e) => {
+        e.preventDefault()
+        console.log("click")
+        window.scrollTo({
+            top: window.innerHeight * 16,
+            behavior: "smooth"
+        })
+    })
+}

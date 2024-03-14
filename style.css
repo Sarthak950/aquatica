@@ -249,7 +249,7 @@
     line-height: 10rem;
 
     color: rgba(0, 0, 0, 0) !important;
-    -webkit-text-stroke: 3px var(--yellow);
+    -webkit-text-stroke: 2px var(--yellow);
     /* text-stroke: 5px var(--yellow); */
 }
 
@@ -384,8 +384,29 @@
     justify-content: center;
     align-items: center;
 
+    position: relative;
+
     animation: all 3s ease-in-out;
 }
+
+.curosol::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(-45deg,
+            black 25%,
+            gray 0px,
+            gray 50%,
+            black 0px,
+            black 75%,
+            gray 0px) 0% 0% / 5px 5px;
+        opacity: 0.1;
+}
+
 
 .curosolTitle {
     font-family: Anton;
@@ -432,6 +453,8 @@
     align-items: center;
     padding-inline: 1rem;
     transition: transform 0.3s ease;
+
+    /* z-index: 20; */
 }
 
 .catCard {
@@ -444,7 +467,7 @@
     overflow: hidden;
 
     background-size: auto 100% !important;
-    background-position: center !important;
+    background-position: 20% !important;
 
     display: flex;
     flex-direction: column;
