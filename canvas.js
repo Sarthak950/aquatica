@@ -1,4 +1,4 @@
-let winCount = 20;
+let winCount = 12;
 let isMob = false;
 // detect if the user is on mobile
 if (window.innerWidth < 768) {
@@ -13,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 if (!isMob) {
     const lenis = new Lenis({
         duration: 0.2,
+        // content: document.getElementById("page"),
         // easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
         // direction: "vertical",
         // gestureDirection: "vertical",
@@ -154,7 +155,7 @@ if (!isMob) {
             duration: frameTransitionDuration,
             onUpdate: function () {
                 // console.log("Frame Count:", i);
-                // debouncedRender(); // Use the debounced render function
+                debouncedRender(); // Use the debounced render function
             },
         }, `+=${frameTransitionDuration}`)
             .to(airpods, {
@@ -272,26 +273,26 @@ function render() {
         context.drawImage(img, offsetX, offsetY, scaledWidth, scaledHeight);
     }
 }
-if (!isMob) {
-    slidetimeline
-        .to("#slide6", {
-            // maskposition: "0% -4.5vh",
-            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-            duration: 3,
-        }, "+=0")
-        .to("#slide7", {
-            // maskposition: "0% -4.5vh",
-            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-            duration: 3,
-        }, "+=0")
-        .to("#slide8", {
-            // maskposition: "0% -4.5vh",
-            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-            duration: 3,
-        }, "+=0")
-        .to("#slide9", {
-            // maskposition: "0% -4.5vh",
-            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-            duration: 3,
-        }, "+=0");
-}
+// if (!isMob) {
+//     slidetimeline
+//         .to("#slide6", {
+//             // maskposition: "0% -4.5vh",
+//             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+//             duration: 3,
+//         }, "+=0")
+//         .to("#slide7", {
+//             // maskposition: "0% -4.5vh",
+//             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+//             duration: 3,
+//         }, "+=0")
+//         .to("#slide8", {
+//             // maskposition: "0% -4.5vh",
+//             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+//             duration: 3,
+//         }, "+=0")
+//         .to("#slide9", {
+//             // maskposition: "0% -4.5vh",
+//             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+//             duration: 3,
+//         }, "+=0");
+// }
