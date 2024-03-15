@@ -40,18 +40,22 @@ window.addEventListener("resize", () => {
 
 
 const gameTipsList = [
-    "You can use the arrow keys to move the character",
-    "You can use the space key to jump",
-    "You can use the shift key to sprint",
-    "You can use the control key to crouch",
-    "You can use the left mouse button to attack",
-    "You can use the right mouse button to block",
-    "You can use the middle mouse button to use the special ability",
-    "You can use the E key to interact with the environment",
-    "You can use the Q key to use the special ability",
-    "You can use the R key to reload",
-    "You can use the F key to use the flashlight",
-    "You can use the G key to use the"
+    "Constellation ships sail through the cosmic theater.",
+    "Astrokidz bound by mystery and shared journey.",
+    "Holographic skies echo tales of cosmic wonders.",
+    "Legends speak of 'Aquatica'—a shimmering sanctuary.",
+    "Worlds untouched, every grain holds purpose.",
+    "Adventure whispers in distant sapphire glow.",
+    "Crafted shores of the unknown call out.",
+    "Astrokidz dream of staking their claim.",
+    "Journey aims for 'Aquatica's' untouched worlds.",
+    "Cosmic odyssey unfolds in the endless expanse.",
+    "In the cosmic theater, a constellation of ships sets sail, bearing the emblem of a radiant star and a child.",
+    "Bound by a shared journey, the Astrokidz weave tales of mysteries half-told and memories not fully formed.",
+    "Amidst holographic skies and whispered secrets, the Astrokidz find solace in tales of cosmic wonders.",
+    "In the vastness of space, a shimmering cluster beckons—the legendary sanctuary known as 'Aquatica.'",
+    "Legends speak of worlds untouched, where every grain of sand holds a purpose, in the distant glow of 'Aquatica.'",
+    "With every whisper of adventure, the Astrokidz dream of staking their claim on the crafted shores of the unknown."
 ]
 
 const gameTips = document.getElementById("loaderTip");
@@ -111,11 +115,11 @@ const addNav = () => {
             <div title="Top" class="navLink" id="topScroll"></div>
         </div>
         <div>
-            <h1 class="navTitle">Astro Kid</h1>
+            <h1 class="navTitle">AstroKid</h1>
             <div title="Astro Kid" class="navLink" id="charScroll"></div>
         </div>
         <div>
-            <h1 class="navTitle">Path's</h1>
+            <h1 class="navTitle">Paths</h1>
             <div title="Path" class="navLink" id="pathScroll"></div>
         </div>
         <div>
@@ -123,7 +127,7 @@ const addNav = () => {
             <div title="Lore" class="navLink" id="comicScroll"></div>
         </div>
         <div>
-            <h1 class="navTitle">NFT's</h1>
+            <h1 class="navTitle">NFTs</h1>
             <div title="NFT's" class="navLink" id="nftScroll"></div>
         </div>
         <div>
