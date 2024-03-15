@@ -105,96 +105,56 @@ const slidetimeline = gsap.timeline({
         scrub: true,
         pin: true,
         anticipatePin: 1,
-        markers: true
+        // markers: true
     },
 });
 
 if (!isMob) {
     slidetimeline
-        // .to("#slide1", {
-        //     // maskPosition: "0% -4.5vh",
-        //     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        //     duration: 2,
-        // })
+        .to("#slide1", {
+            // maskPosition: "0% -4.5vh",
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: 2,
+        })
         .to(".contextText1", {
             opacity: 1,
             duration: 1,
-            onStart: () => {
-                gsap.to("#slide1", {
-                    // maskPosition: "0% -4.5vh",
-                    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-                    duration: 2,
-                })
-            }
-        }, "+=3")
-        // .to("#slide2", {
-        //     // maskPosition: "0% -4.5vh",
-        //     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        //     duration: 2,
-        // }, "+=1")
+        }, "-=1.5")
+        .to("#slide2", {
+            // maskPosition: "0% -4.5vh",
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: 2,
+        }, "+=1")
         .to(".contextText2", {
             opacity: 1,
             duration: 1,
-            onStart: () => {
-                gsap.to("#slide2", {
-                    // maskPosition: "0% -4.5vh",
-                    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-                    duration: 2,
-                })
-            }
-        }, "+=3")
-        // .to("#slide3", {
-        //     // maskPosition: "0% -4.5vh",
-        //     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        //     duration: 2,
-        // }, "+=0")
+        }, "-=1.5")
+        .to("#slide3", {
+            // maskPosition: "0% -4.5vh",
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: 2,
+        }, "+=0")
         .to(".contextText3", {
             opacity: 1,
             duration: 1,
-            onStart: () => {
-                gsap.to("#slide3", {
-                    // maskPosition: "0% -4.5vh",
-                    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-                    duration: 2,
-                })
-            }
-        }, "+=3")
-        // .to("#slide4", {
-        //     // maskPosition: "0% -4.5vh",
-        //     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        //     duration: 2,
-        // }, "+=0")
+        }, "-=1.5")
+        .to("#slide4", {
+            // maskPosition: "0% -4.5vh",
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: 2,
+        }, "+=0")
         .to(".contextText4", {
             opacity: 1,
             duration: 1,
-            onStart: () => {
-                gsap.to("#slide4", {
-                    // maskPosition: "0% -4.5vh",
-                    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-                    duration: 2,
-                })
+        }, "-=1.5")
+        .to("#slide5", {
+            // maskPosition: "0% -4.5vh",
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            duration: 3,
+            onComplete: () => {
+                addClass(1)
             }
-        }, "+=3")
-        // .to("#slide5", {
-        //     // maskPosition: "0% -4.5vh",
-        //     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        //     duration: 3,
-        //     onComplete: () => {
-        //         addClass(1)
-        //     }
-        // }, "+=0");
-        // added some for dummy 
-        .to(".contextText1", {
-            // opacity: 1,
-            duration: 1,
-            onStart: () => {
-                gsap.to("#slide5", {
-                    // maskPosition: "0% -4.5vh",
-                    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-                    duration: 2,
-                })
-            }
-        }, "+=3")
+        }, "+=0");
 }
 
 const index = 10000;
