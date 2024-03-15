@@ -142,23 +142,46 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 3rem;
+    /* width: 20rem; */
     gap: 3rem;
 }
 
 .navCon>div {
-    width: 8px;
-    height: 8px;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
 
-    border-radius: 100%;
-
-    background: white;
-    opacity: 0.7;
     animation: all 1s ease-in-out;
 }
 
-.navCon>div:hover,
-.activeNavCom {
-    opacity: 1!important;
-    scale: 1.2!important;
+.navCon>div>div {
+    margin-right: 2rem;
+    width: 12px;
+    height: 12px;
+    
+    border: 1px solid var(--yellow);
+
+    opacity: 0.7;
+    border-radius: 100%;
+
+    background: white;
 }
+
+.navTitle{
+    font-size: 1.2rem;
+    font-family: "Anton";
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.navCon>div>div:hover,
+.activeNavCom {
+    opacity: 1 !important;
+    scale: 1.2 !important;
+}
+

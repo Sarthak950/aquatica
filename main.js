@@ -104,14 +104,34 @@ document
 const addNav = () => {
     const nav = document.createElement("nav");
     nav.innerHTML = `
+    
     <div class="navCon">
-        <div title="Top" class="navLink" id="topScroll"></div>
-        <div title="Astro Kid" class="navLink" id="charScroll"></div>
-        <div title="Path" class="navLink" id="pathScroll"></div>
-        <div title="Lore" class="navLink" id="comicScroll"></div>
-        <div title="NFT's" class="navLink" id="nftScroll"></div>
-        <div title="Know Us" class="navLink" id="bottomScroll"></div>
+        <div>
+            <h1 class="navTitle">TOP</h1>
+            <div title="Top" class="navLink" id="topScroll"></div>
+        </div>
+        <div>
+            <h1 class="navTitle">Astro Kid</h1>
+            <div title="Astro Kid" class="navLink" id="charScroll"></div>
+        </div>
+        <div>
+            <h1 class="navTitle">Path's</h1>
+            <div title="Path" class="navLink" id="pathScroll"></div>
+        </div>
+        <div>
+            <h1 class="navTitle">Comic Section</h1>
+            <div title="Lore" class="navLink" id="comicScroll"></div>
+        </div>
+        <div>
+            <h1 class="navTitle">NFT's</h1>
+            <div title="NFT's" class="navLink" id="nftScroll"></div>
+        </div>
+        <div>
+            <h1 class="navTitle">Contact Us</h1>
+            <div title="Know Us" class="navLink" id="bottomScroll"></div>
+        </div>
     </div>
+
     `;
     document.getElementsByClassName("pin-spacer")[0].appendChild(nav)
     document.getElementById("topScroll").addEventListener("click", (e) => {
@@ -162,4 +182,35 @@ const addNav = () => {
             behavior: "smooth"
         })
     })
+
+
+    setTimeout(() => {
+
+        const navTittleArr = document.getElementsByClassName("navTitle");
+        const navLinkArr = document.getElementsByClassName("navLink");
+
+        // when the link is hovered then the opacity of nav link =1 
+        for (let i = 0; i < navLinkArr.length; i++) {
+            navLinkArr[i].addEventListener("mouseover", () => {
+                gsap.to(navTittleArr[i], {
+                    opacity: 1,
+                    duration: 0.5
+                })
+                // navTittleArr[i].style.opacity = 1;
+            });
+            navLinkArr[i].addEventListener("mouseout", () => {
+                // navTittleArr[i].style.opacity = 0;
+                gsap.to(navTittleArr[i], {
+                    opacity: 0,
+                    duration: 0.5
+                })
+            });
+        }
+
+    }, 1000);
+
+
 }
+
+
+

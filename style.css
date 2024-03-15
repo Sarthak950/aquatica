@@ -78,7 +78,7 @@
     letter-spacing: 0.5rem;
     text-wrap: balance;
     text-transform: uppercase;
-    text-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
+    text-shadow: 4px 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .heroTitle>p {
@@ -91,7 +91,7 @@
     opacity: 0.8;
     padding-left: 1rem;
 
-    text-shadow: 4px 4px 30px rgba(0, 0, 0, 0.2);
+    text-shadow: 4px 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .herofooter {
@@ -128,7 +128,9 @@
 
 .hollow {
     color: rgba(0, 0, 0, 0) !important;
-    -webkit-text-stroke: 1px var(--yellow);
+    -webkit-text-fill-color: rgba(0, 0, 0, 0) !important;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--yellow);
     /* text-stroke: 1px var(--yellow); */
     /* text-shadow: 0 0 1px rgba(0, 0, 0, 0.1); */
 }
@@ -249,7 +251,12 @@
     line-height: 10rem;
 
     color: rgba(0, 0, 0, 0) !important;
-    -webkit-text-stroke: 2px var(--yellow);
+    -webkit-text-fill-color: rgba(0, 0, 0, 0) !important;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--yellow);
+    /* color: rgba(0, 0, 0, 0) !important; */
+    /* -webkit-text-stroke: 2px var(--yellow); */
+    
     /* text-stroke: 5px var(--yellow); */
 }
 
@@ -261,7 +268,7 @@
     text-transform: uppercase;
     color: var(--yellow);
 
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contextText>div>p {
@@ -273,7 +280,7 @@
     width: 100%;
     line-height: 1.3rem;
     word-wrap: nowrap;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .contextText2>*,
@@ -324,8 +331,15 @@
     font-size: 30rem;
     line-height: 32rem;
     letter-spacing: 2rem;
+    
+
     color: rgba(0, 0, 0, 0) !important;
-    -webkit-text-stroke: 1px var(--yellow);
+    -webkit-text-fill-color: rgba(0, 0, 0, 0) !important;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--yellow);
+    
+    /* -webkit-text-stroke: 1px var(--yellow); */
+    
     /* text-stroke: 1px var(--yellow); */
     opacity: 0.5;
 }
@@ -404,9 +418,8 @@
             black 0px,
             black 75%,
             gray 0px) 0% 0% / 5px 5px;
-        opacity: 0.1;
+    opacity: 0.1;
 }
-
 
 .curosolTitle {
     font-family: Anton;
@@ -415,7 +428,7 @@
     text-transform: uppercase;
     color: black;
     padding-bottom: 1rem;
-    text-shadow: 4px 4px 50px rgba(0, 0, 0, 0.4);
+    /* text-shadow: 4px 4px 50px rgba(0, 0, 0, 0.4); */
 }
 
 .StupidBtn,

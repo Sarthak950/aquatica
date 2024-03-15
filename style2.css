@@ -15,8 +15,13 @@
     line-height: 100vh;
     width: fit-content;
     color: rgba(0, 0, 0, 0) !important;
-    -webkit-text-stroke: 4px white;
-    text-stroke: 4px white;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0) !important;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--yellow);
+
+    /* color: rgba(0, 0, 0, 0) !important; */
+    /* -webkit-text-stroke: 4px white; */
+    /* text-stroke: 4px white; */
     opacity: 0.1;
 }
 
@@ -130,7 +135,7 @@
     text-transform: uppercase;
     color: var(--yellow);
 
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
 
     padding-inline: 0.5rem;
     width: fit-content;
