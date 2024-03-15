@@ -479,6 +479,8 @@
     width: 20rem;
     padding-left: 2rem;
     padding-right: 1rem;
+
+    background-position: center !important;
 }
 
 .catCard:hover>p {
