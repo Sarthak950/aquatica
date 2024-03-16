@@ -229,13 +229,13 @@ if (!isMob) {
                 snap: "frame",
                 duration: frameTransitionDuration,
                 onUpdate: function () {
-                    // console.log("Frame Count:", i);
+                    console.log("Frame Count:", i);
                     debouncedRender(); // Use the debounced render function
                 },
             });
 
         if (
-            i === 25 || i === 61 || i === 93 || i === 116 || i === 151 || i === 176 ||
+            i === 0 || i === 25 || i === 61 || i === 93 || i === 116 || i === 151 || i === 176 ||
             i === 215
         ) {
             slidetimeline.to(modelTextList[count], {
@@ -249,6 +249,7 @@ if (!isMob) {
             count++;
         }
     }
+
 }
 images[0].onload = render;
 
@@ -276,6 +277,19 @@ if (isMob) {
                 },
             });
 
+        if (i === 0) {
+            mobTimeline
+                .to(modelTextList[count], {
+                    opacity: 1,
+                    duration: 2,
+                }, "-=1")
+                .to(modelTextList[count], {
+                    opacity: 0,
+                    duration: 1,
+                }, "+=0.5");
+            count++;
+        }
+
         if (
             i === 25 || i === 61 || i === 93 || i === 116 || i === 151 || i === 176 ||
             i === 215
@@ -292,11 +306,19 @@ if (isMob) {
             count++;
         }
     }
+    mobTimeline.then(() => {
+        setTimeout(() => {
+            mobTimeline.restart()
+        }, 1000);
+    })
+
 
     const observer2 = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
+                // setTimeout(() => {
                 mobTimeline.play();
+                // }, 500);
                 // entry.target.classList.add("show");
             } else {
                 mobTimeline.pause();
@@ -337,28 +359,3 @@ function render() {
         context.drawImage(img, offsetX, offsetY, scaledWidth, scaledHeight);
     }
 }
-
-
-// if (!isMob) {
-//     slidetimeline
-//         .to("#slide6", {
-//             // maskposition: "0% -4.5vh",
-//             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-//             duration: 3,
-//         }, "+=0")
-//         .to("#slide7", {
-//             // maskposition: "0% -4.5vh",
-//             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-//             duration: 3,
-//         }, "+=0")
-//         .to("#slide8", {
-//             // maskposition: "0% -4.5vh",
-//             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-//             duration: 3,
-//         }, "+=0")
-//         .to("#slide9", {
-//             // maskposition: "0% -4.5vh",
-//             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-//             duration: 3,
-//         }, "+=0");
-// }

@@ -424,6 +424,10 @@
         letter-spacing: 0.5rem;
         margin-bottom: 3rem;
     }
+
+    .navCon {
+        display: none;
+    }
 }
 
 @media (max-width: 575.98px) {

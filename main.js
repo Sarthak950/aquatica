@@ -111,28 +111,28 @@ const addNav = () => {
     
     <div class="navCon">
         <div>
-            <h1 class="navTitle">TOP</h1>
-            <div title="Top" class="navLink" id="topScroll"></div>
+            <h1 class="navTitle">Hero</h1>
+            <div title="Top" class="navLink" id="topScroll"><h1>as</h1></div>
         </div>
         <div>
             <h1 class="navTitle">AstroKid</h1>
-            <div title="Astro Kid" class="navLink" id="charScroll"></div>
+            <div title="Astro Kid" class="navLink" id="charScroll"><h1>as</h1></div>
         </div>
         <div>
-            <h1 class="navTitle">Paths</h1>
-            <div title="Path" class="navLink" id="pathScroll"></div>
+            <h1 class="navTitle">Persona</h1>
+            <div title="Path" class="navLink" id="pathScroll"><h1>as</h1></div>
         </div>
         <div>
-            <h1 class="navTitle">Comic Section</h1>
-            <div title="Lore" class="navLink" id="comicScroll"></div>
+            <h1 class="navTitle">Comics</h1>
+            <div title="Lore" class="navLink" id="comicScroll"><h1>as</h1></div>
         </div>
         <div>
-            <h1 class="navTitle">NFTs</h1>
-            <div title="NFT's" class="navLink" id="nftScroll"></div>
+            <h1 class="navTitle">Astrokidz collection</h1>
+            <div title="NFT's" class="navLink" id="nftScroll"><h1>as</h1></div>
         </div>
         <div>
-            <h1 class="navTitle">Contact Us</h1>
-            <div title="Know Us" class="navLink" id="bottomScroll"></div>
+            <h1 class="navTitle">Newsletter</h1>
+            <div title="Know Us" class="navLink" id="bottomScroll"><h1>as</h1></div>
         </div>
     </div>
 
