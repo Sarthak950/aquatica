@@ -3,20 +3,20 @@ const scrollCon = document.getElementById("catCardCon");
 import gsap from "gsap";
 
 
-let isFolded = false
-// add inactiveCard to the whole list
+// let isFolded = false
+// // add inactiveCard to the whole list
 for (let i = 0; i < cardList.length; i++) {
     cardList[i].classList.add("inactiveCard");
-    cardList[i].addEventListener("click", ()=> {
-        if (!isFolded) {
-            cardList[0].classList.remove("activeCard");
-            cardList[0].classList.add("inactiveCard");
-        }
-    })
+    // cardList[i].addEventListener("click", ()=> {
+        // if (!isFolded) {
+            // cardList[0].classList.remove("activeCard");
+            // cardList[0].classList.add("inactiveCard");
+        // }
+    // })
 }
 cardList[0].classList.remove("inactiveCard");
 cardList[0].classList.add("activeCard");
-
+//
 
 let i = 0;
 
