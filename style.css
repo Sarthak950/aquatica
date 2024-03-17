@@ -630,10 +630,6 @@
     position: relative;
 }
 
-.nftImgCon>img {
-    width: 35vw;
-}
-
 .nftText {
     display: flex;
     flex-direction: column;
@@ -644,6 +640,53 @@
     position: relative;
     height: fit-content;
     width: fit-content;
+}
+
+.nftImgCon>img {
+    width: 28vw;
+}
+
+.AbsStars {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.star1 {
+    width: 1.2rem!important;
+    top: 2%;
+    left: -5%;
+}
+
+.star2 {
+    width: 1.4rem!important;
+    top: 40%;
+    left: -25%;
+}
+
+
+.star3 {
+    width: 1.7rem!important;
+    top: 105%;
+    left: 5%;
+}
+
+.star4 {
+    width: 1rem!important;
+    top: 90%;
+    left: 104%;
+}
+
+.star5 {
+    width: 2rem!important;
+    top: 42%;
+    left: 115%;
+}
+
+.star6 {
+    width: 2.2rem!important;
+    top: -7%;
+    left: 97%;
 }
 
 .nftText>h1 {
