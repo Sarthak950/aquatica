@@ -100,36 +100,36 @@ document
 
 const addNav = () => {
     const nav = document.createElement("nav");
-    nav.innerHTML = `
-    
-    <div class="navCon">
-        <div>
-            <h1 class="navTitle">Hero</h1>
-            <div title="Top" class="navLink" id="topScroll"><h1>as</h1></div>
-        </div>
-        <div>
-            <h1 class="navTitle">AstroKid</h1>
-            <div title="Astro Kid" class="navLink" id="charScroll"><h1>as</h1></div>
-        </div>
-        <div>
-            <h1 class="navTitle">Persona</h1>
-            <div title="Path" class="navLink" id="pathScroll"><h1>as</h1></div>
-        </div>
-        <div>
-            <h1 class="navTitle">Comics</h1>
-            <div title="Lore" class="navLink" id="comicScroll"><h1>as</h1></div>
-        </div>
-        <div>
-            <h1 class="navTitle">Astrokidz collection</h1>
-            <div title="NFT's" class="navLink" id="nftScroll"><h1>as</h1></div>
-        </div>
-        <div>
-            <h1 class="navTitle">Newsletter</h1>
-            <div title="Know Us" class="navLink" id="bottomScroll"><h1>as</h1></div>
-        </div>
-    </div>
 
+    nav.innerHTML = `
+        <div class="navCon">
+            <div>
+                <h1 class="navTitle">Welcome</h1>
+                <div class="navLink" id="topScroll"><h1>as</h1></div>
+            </div>
+            <div>
+                <h1 class="navTitle">AstroKid</h1>
+                <div class="navLink" id="charScroll"><h1>as</h1></div>
+            </div>
+            <div>
+                <h1 class="navTitle">Persona</h1>
+                <div class="navLink" id="pathScroll"><h1>as</h1></div>
+            </div>
+            <div>
+                <h1 class="navTitle">Comics</h1>
+                <div class="navLink" id="comicScroll"><h1>as</h1></div>
+            </div>
+            <div>
+                <h1 class="navTitle">Astrokidz collection</h1>
+                <div class="navLink" id="nftScroll"><h1>as</h1></div>
+            </div>
+            <div>
+                <h1 class="navTitle">Newsletter</h1>
+                <div class="navLink" id="bottomScroll"><h1>as</h1></div>
+            </div>
+        </div>
     `;
+
     document.getElementsByClassName("pin-spacer")[0].appendChild(nav)
     document.getElementById("topScroll").addEventListener("click", (e) => {
         e.preventDefault()
