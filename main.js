@@ -8,10 +8,10 @@ import gsap from "gsap";
 for (let i = 0; i < cardList.length; i++) {
     cardList[i].classList.add("inactiveCard");
     // cardList[i].addEventListener("click", ()=> {
-        // if (!isFolded) {
-            // cardList[0].classList.remove("activeCard");
-            // cardList[0].classList.add("inactiveCard");
-        // }
+    // if (!isFolded) {
+    // cardList[0].classList.remove("activeCard");
+    // cardList[0].classList.add("inactiveCard");
+    // }
     // })
 }
 cardList[0].classList.remove("inactiveCard");

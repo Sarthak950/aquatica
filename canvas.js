@@ -4,8 +4,12 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 let addClass
+window.scrollTo(0, 0);
+
 
 window.addEventListener("load", () => {
+
+
     setTimeout(() => {
         const navElements = document.getElementsByClassName("navLink")
         addClass = (number) => {
@@ -69,7 +73,7 @@ window.addEventListener("load", () => {
         const curoso4 = document.querySelectorAll("#socials");
         curoso4.forEach((el) => Observer4.observe(el));
 
-    }, 1000)
+    }, 1200)
 })
 
 let winCount = 12;
