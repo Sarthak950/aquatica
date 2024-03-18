@@ -162,15 +162,15 @@
     position: absolute;
     top: 0;
     left: 0;
-    /* clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%); */
-    /* -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%); */
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
     /* will-change: scroll-position; */
     /* perspective: 1000px; */
-    mask: url("/Aquatica/mask4.webp");
-    mask-size: 100% auto;
+    /* mask: url("/Aquatica/mask4.webp"); */
+    /* mask-size: 100% auto; */
     /* mask-size: 100vh 100vw; */
-    mask-repeat: no-repeat;
-    mask-position: 0% 100vh;
+    /* mask-repeat: no-repeat; */
+    /* mask-position: 0% 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
