@@ -179,8 +179,10 @@ nav {
 
 .navTitle {
     font-size: 1.2rem;
-    font-family: "Anton";
-    color: white;
+    /* font-family: "Anton"; */
+    /* color: white; */
+
+    color: var(--yellow);
     /* background: green; */
     text-transform: uppercase;
     letter-spacing: 0.2rem;
@@ -198,4 +200,8 @@ nav {
 .activeNavCom {
     opacity: 1 !important;
     scale: 1.2 !important;
+}
+
+#dreader:hover {
+    scale: 1!important;
 }

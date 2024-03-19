@@ -7,20 +7,10 @@ import gsap from "gsap";
 // // add inactiveCard to the whole list
 for (let i = 0; i < cardList.length; i++) {
     cardList[i].classList.add("inactiveCard");
-    // cardList[i].addEventListener("click", ()=> {
-    // if (!isFolded) {
-    // cardList[0].classList.remove("activeCard");
-    // cardList[0].classList.add("inactiveCard");
-    // }
-    // })
 }
 cardList[0].classList.remove("inactiveCard");
 cardList[0].classList.add("activeCard");
-//
-
 let i = 0;
-
-
 window.addEventListener("resize", () => {
     if (window.innerWidth > 900) {
         gsap.to(scrollCon, {
@@ -52,12 +42,25 @@ const gameTipsList = [
 ]
 
 const gameTips = document.getElementById("loaderTip");
+let isLoaded = false
 //
 // // inject a random tip into the gameTips 
 gameTips.innerHTML = gameTipsList[Math.floor(Math.random() * gameTipsList.length)];
 
+function logEveryThreeSeconds() {
+    gameTips.innerHTML = gameTipsList[Math.floor(Math.random() * gameTipsList.length)];
+  if (!isLoaded) {
+    setTimeout(logEveryThreeSeconds, 3000);
+  }
+}
+
+// Start the initial timeout
+setTimeout(logEveryThreeSeconds, 3000);
+
+
 // check if all the assets are loaded 
 window.addEventListener("load", () => {
+    isLoaded = true 
     const loader = document.getElementById("loader");
 
     window.scrollTo(0, 0);
