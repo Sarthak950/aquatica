@@ -246,7 +246,7 @@
 }
 
 .contextText>h1 {
-    /* font-family: Anton; */
+    font-family: Anton;
     color: var(--yellow);
     font-size: 8rem;
     line-height: 10rem;
