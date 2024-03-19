@@ -497,7 +497,7 @@
     }
 
     .slide2 {
-        background-position-x: 40%;
+        background-position-x: 60%;
     }
 
     .slide3 {
@@ -505,6 +505,9 @@
     }
 
     .slide4 {
+        background-position-x: 40%;
+    }
+    .slide5 {
         background-position-x: 40%;
     }
 

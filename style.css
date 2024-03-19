@@ -246,7 +246,7 @@
 }
 
 .contextText>h1 {
-    font-family: Anton;
+    /* font-family: Anton; */
     color: var(--yellow);
     font-size: 8rem;
     line-height: 10rem;
@@ -328,7 +328,7 @@
 .bgText1>*,
 .bgText2>* {
     /* width: 100vw; */
-    font-family: Anton;
+    /* font-family: Anton; */
     font-size: 30rem;
     line-height: 32rem;
     letter-spacing: 2rem;
