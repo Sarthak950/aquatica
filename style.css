@@ -165,15 +165,10 @@
     clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
     -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
     will-change: scroll-position;
-    /* perspective: 1000px; */
-    /* mask: url("/Aquatica/mask4.webp"); */
-    /* mask-size: 100% auto; */
-    /* mask-size: 100vh 100vw; */
-    /* mask-repeat: no-repeat; */
-    /* mask-position: 0% 100vh; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
 }
 
 .slide1 {
@@ -257,7 +252,7 @@
     -webkit-text-stroke-color: var(--yellow);
     /* color: rgba(0, 0, 0, 0) !important; */
     /* -webkit-text-stroke: 2px var(--yellow); */
-    
+
     /* text-stroke: 5px var(--yellow); */
 }
 
@@ -290,23 +285,23 @@
 }
 
 .contextText1 {
-    margin-top: 20rem;
+    margin-top: 30rem;
     margin-left: 45rem;
 }
 
 .contextText2 {
-    margin-top: 15rem;
-    margin-left: 20rem;
+    margin-top: 30rem;
+    margin-left: 15rem;
 }
 
 .contextText3 {
-    margin-top: 17rem;
-    margin-left: 35rem;
+    margin-top: 30rem;
+    margin-left: 45rem;
 }
 
 .contextText4 {
-    margin-top: 22rem;
-    margin-left: 20rem;
+    margin-top: 30rem;
+    margin-left: 15rem;
 }
 
 .bgTextCon {
@@ -332,15 +327,14 @@
     font-size: 30rem;
     line-height: 32rem;
     letter-spacing: 2rem;
-    
 
     color: rgba(0, 0, 0, 0) !important;
     -webkit-text-fill-color: rgba(0, 0, 0, 0) !important;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--yellow);
-    
+
     /* -webkit-text-stroke: 1px var(--yellow); */
-    
+
     /* text-stroke: 1px var(--yellow); */
     opacity: 0.5;
 }
@@ -539,7 +533,6 @@
     font-size: 2rem;
     height: 100%;
 
-
     letter-spacing: 0.2rem;
     text-transform: capitalize;
     text-wrap: nowrap;
@@ -654,38 +647,37 @@
 }
 
 .star1 {
-    width: 1.2rem!important;
+    width: 1.2rem !important;
     top: 2%;
     left: -5%;
 }
 
 .star2 {
-    width: 1.4rem!important;
+    width: 1.4rem !important;
     top: 40%;
     left: -25%;
 }
 
-
 .star3 {
-    width: 1.7rem!important;
+    width: 1.7rem !important;
     top: 105%;
     left: 5%;
 }
 
 .star4 {
-    width: 1rem!important;
+    width: 1rem !important;
     top: 90%;
     left: 104%;
 }
 
 .star5 {
-    width: 2rem!important;
+    width: 2rem !important;
     top: 42%;
     left: 115%;
 }
 
 .star6 {
-    width: 2.2rem!important;
+    width: 2.2rem !important;
     top: -7%;
     left: 97%;
 }

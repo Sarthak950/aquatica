@@ -49,9 +49,9 @@ gameTips.innerHTML = gameTipsList[Math.floor(Math.random() * gameTipsList.length
 
 function logEveryThreeSeconds() {
     gameTips.innerHTML = gameTipsList[Math.floor(Math.random() * gameTipsList.length)];
-  if (!isLoaded) {
-    setTimeout(logEveryThreeSeconds, 3000);
-  }
+    if (!isLoaded) {
+        setTimeout(logEveryThreeSeconds, 3000);
+    }
 }
 
 // Start the initial timeout
@@ -60,7 +60,7 @@ setTimeout(logEveryThreeSeconds, 3000);
 
 // check if all the assets are loaded 
 window.addEventListener("load", () => {
-    isLoaded = true 
+    isLoaded = true
     const loader = document.getElementById("loader");
 
     window.scrollTo(0, 0);
