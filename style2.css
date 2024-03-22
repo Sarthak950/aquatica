@@ -7,7 +7,6 @@
     align-items: center;
     padding-inline: 1rem;
     transition: transform 0.3s ease;
-
 }
 
 .catCard {
@@ -503,12 +502,19 @@
     padding-inline: 2.5rem;
     padding-block: 0.7rem;
     margin-left: 0.7rem;
+
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.presaleBtn:hover {
+    scale: 1;
+    transform: translateX(3%) translateY(-3%);
 }
 
 .heroTitle>p {
     padding-bottom: 1.5rem;
 }
-
 
 .topImgCon {
     margin-top: 1rem;
