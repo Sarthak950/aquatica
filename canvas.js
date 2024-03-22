@@ -78,7 +78,7 @@ window.addEventListener("load", () => {
 
 let winCount = 12;
 let isMob = false;
-// detect if the user is on mobile
+
 if (window.innerWidth < 768) {
     winCount = 27;
     isMob = true;
@@ -88,8 +88,8 @@ if (!isMob) {
         duration: 0.2,
     });
     lenis.on("scroll", (e) => {
-        // console.log(e.actualScroll);
-        // console.log(e);
+
+
     });
 
     lenis.on("scroll", ScrollTrigger.update);
@@ -109,14 +109,14 @@ const slidetimeline = gsap.timeline({
         scrub: true,
         pin: true,
         anticipatePin: 1,
-        // markers: true
+
     },
 });
 
 if (!isMob) {
     slidetimeline
         .to("#slide1", {
-            // maskPosition: "0% -4.5vh",
+
             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
             duration: 2,
         })
@@ -125,7 +125,7 @@ if (!isMob) {
             duration: 1,
         }, "-=1.5")
         .to("#slide2", {
-            // maskPosition: "0% -4.5vh",
+
             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
             duration: 2,
         }, "+=1")
@@ -134,7 +134,7 @@ if (!isMob) {
             duration: 1,
         }, "-=1.5")
         .to("#slide3", {
-            // maskPosition: "0% -4.5vh",
+
             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
             duration: 2,
         }, "+=0")
@@ -143,7 +143,7 @@ if (!isMob) {
             duration: 1,
         }, "-=1.5")
         .to("#slide4", {
-            // maskPosition: "0% -4.5vh",
+
             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
             duration: 2,
         }, "+=0")
@@ -152,7 +152,7 @@ if (!isMob) {
             duration: 1,
         }, "-=1.5")
         .to("#slide5", {
-            // maskPosition: "0% -4.5vh",
+
             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
             duration: 3,
             onComplete: () => {
@@ -166,10 +166,10 @@ const frameCount = 240;
 const currentFrame = (index) => (
     `/Aquatica/Renders${isMob ? "Mob" : ""}/Char_Turn_Around${(10000 + index).toString()
     }.webp`
-    // `/Aquatica/Renders/Char_Turn_Around${(10000 + index).toString()}.webp`
+
 );
 
-// Example usage:
+
 const images = [];
 
 for (let i = 0; i < frameCount; i++) {
@@ -183,28 +183,28 @@ Promise.all(images.map((img) => {
         img.onload = resolve;
     });
 })).then(() => {
-    // Initialize scroll animations here
+
     ScrollTrigger.refresh();
 });
 
-// Canvas setup
+
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 canvas.width = 1158;
 canvas.height = 770;
 
-// Airpods animation setup
+
 const airpods = {
     frame: 0,
 };
 
-// Extend the duration to add time for fade-in and fade-out
+
 const totalAnimationDuration = 7;
 let frameTransitionDuration = totalAnimationDuration / frameCount;
 
 let count = 0;
 const modelTextList = document.getElementsByClassName("modelText");
-// Step 1: Add the debounce function
+
 function debounce(func, wait) {
     let timeout;
     return function () {
@@ -224,8 +224,8 @@ if (!isMob) {
         slidetimeline.to({}, {
             duration: frameTransitionDuration,
             onUpdate: function () {
-                // console.log("Frame Count:", i);
-                debouncedRender(); // Use the debounced render function
+
+                debouncedRender();
             },
         }, `+=${frameTransitionDuration}`)
             .to(airpods, {
@@ -234,7 +234,7 @@ if (!isMob) {
                 duration: frameTransitionDuration,
                 onUpdate: function () {
                     console.log("Frame Count:", i);
-                    debouncedRender(); // Use the debounced render function
+
                 },
             });
 
@@ -267,8 +267,8 @@ if (isMob) {
         mobTimeline.to({}, {
             duration: frameTransitionDuration,
             onUpdate: function () {
-                // console.log("Frame Count:", i);
-                debouncedRender(); // Use the debounced render function
+
+                debouncedRender();
             },
         }, `+=${frameTransitionDuration}`)
             .to(airpods, {
@@ -276,8 +276,8 @@ if (isMob) {
                 snap: "frame",
                 duration: frameTransitionDuration,
                 onUpdate: function () {
-                    // console.log("Frame Count:", i);
-                    debouncedRender(); // Use the debounced render function
+
+                    debouncedRender();
                 },
             });
 
@@ -320,13 +320,13 @@ if (isMob) {
     const observer2 = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                // setTimeout(() => {
+
                 mobTimeline.play();
-                // }, 500);
-                // entry.target.classList.add("show");
+
+
             } else {
                 mobTimeline.pause();
-                // entry.target.classList.remove("show");
+
             }
         });
     });
@@ -339,25 +339,25 @@ function render() {
 
     const img = images[airpods.frame];
 
-    // Calculate the scaling factors to fit the image within the canvas
+
     const scaleX = canvas.width / img.width;
     const scaleY = canvas.height / img.height;
     const scale = Math.min(scaleX, scaleY);
 
-    // Calculate the dimensions after scaling
+
     const scaledWidth = img.width * scaleX;
     const scaledHeight = img.height * scaleY;
 
-    // Calculate the position to center the scaled image on the canvas
+
     const offsetX = (canvas.width - scaledWidth) / 2;
     const offsetY = (canvas.height - scaledHeight) / 2;
 
-    // center the image
+
     const offX = (canvas.width - img.width) / 2;
     const offY = (canvas.height - img.height) / 2;
-    // Draw the scaled and centered image
+
     if (isMob) {
-        // context.drawImage(img, offX, offY, img.width, img.height);
+
         context.drawImage(img, offX, offY, img.width, img.height);
     } else {
         context.drawImage(img, offsetX, offsetY, scaledWidth, scaledHeight);

@@ -3,8 +3,6 @@ const scrollCon = document.getElementById("catCardCon");
 import gsap from "gsap";
 
 
-// let isFolded = false
-// // add inactiveCard to the whole list
 for (let i = 0; i < cardList.length; i++) {
     cardList[i].classList.add("inactiveCard");
 }
@@ -43,8 +41,6 @@ const gameTipsList = [
 
 const gameTips = document.getElementById("loaderTip");
 let isLoaded = false
-//
-// // inject a random tip into the gameTips 
 gameTips.innerHTML = gameTipsList[Math.floor(Math.random() * gameTipsList.length)];
 
 function logEveryThreeSeconds() {
@@ -54,11 +50,9 @@ function logEveryThreeSeconds() {
     }
 }
 
-// Start the initial timeout
 setTimeout(logEveryThreeSeconds, 3000);
 
 
-// check if all the assets are loaded 
 window.addEventListener("load", () => {
     isLoaded = true
     const loader = document.getElementById("loader");
@@ -189,17 +183,14 @@ const addNav = () => {
         const navTittleArr = document.getElementsByClassName("navTitle");
         const navLinkArr = document.getElementsByClassName("navLink");
 
-        // when the link is hovered then the opacity of nav link =1 
         for (let i = 0; i < navLinkArr.length; i++) {
             navLinkArr[i].addEventListener("mouseover", () => {
                 gsap.to(navTittleArr[i], {
                     opacity: 1,
                     duration: 0.5
                 })
-                // navTittleArr[i].style.opacity = 1;
             });
             navLinkArr[i].addEventListener("mouseout", () => {
-                // navTittleArr[i].style.opacity = 0;
                 gsap.to(navTittleArr[i], {
                     opacity: 0,
                     duration: 0.5

@@ -271,7 +271,6 @@
 
     .activeCard {
         padding-left: 0.7rem;
-        /* padding-right: 0.5rem; */
     }
 
     .catCard>div>h1 {
@@ -466,7 +465,6 @@
         position: relative !important;
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
         -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-        /* padding-inline: 1rem; */
     }
 
     .contextText {
@@ -601,7 +599,6 @@
     .nftText>p {
         width: 100vw;
         text-align: center;
-        /* text-wrap: nowrap; */
     }
 
     .socialCon {
