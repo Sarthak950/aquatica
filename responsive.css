@@ -453,6 +453,12 @@
     .navCon {
         display: none;
     }
+
+    #PresalePopup {
+        scale: 0.45;
+
+        transform: translateY(-15%);
+    }
 }
 
 @media (max-width: 575.98px) {

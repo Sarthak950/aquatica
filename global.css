@@ -1,207 +1,227 @@
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.montserrat-thin {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+
+.montserrat-medium {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+    /* text-wrap: pretty; */
+    text-align: center;
+}
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Big Shoulders Display", sans-serif;
-  letter-spacing: 0.15rem;
-  font-smooth: 2em;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Big Shoulders Display", sans-serif;
+    letter-spacing: 0.15rem;
+    font-smooth: 2em;
 }
 
 html {
-  overflow-x: hidden;
-  height: 100svh;
-  width: 100vw;
-  background-color: var(--background-color);
+    overflow-x: hidden;
+    height: 100svh;
+    width: 100vw;
+    background-color: var(--background-color);
 }
 
 :root {
-  --background-color: #000003;
-  --text-color: #ffffff;
-  --primary-green: #7dff68;
-  --primary-blue-dark: #216c99;
-  --primary-blue: #3a8bd5;
-  --primary-blue-transparent: #216c9911;
-  --primary-blue-light: rgba(58, 139, 213, 0.2);
+    --background-color: #000003;
+    --text-color: #ffffff;
+    --primary-green: #7dff68;
+    --primary-blue-dark: #216c99;
+    --primary-blue: #3a8bd5;
+    --primary-blue-transparent: #216c9911;
+    --primary-blue-light: rgba(58, 139, 213, 0.2);
 
-  --yellow: #faff00;
+    --yellow: #faff00;
 }
 
 * {
-  user-select: none;
-  user-zoom: none;
-  animation: all 1s ease-in-out;
+    user-select: none;
+    user-zoom: none;
+    animation: all 1s ease-in-out;
 }
 
 body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  width: 100vw;
-  overflow-x: hidden;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 a:hover {
-  animation: all 1s ease-in-out;
-  scale: 1.1;
+    animation: all 1s ease-in-out;
+    scale: 1.1;
 }
 
 #loader {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: black;
-  z-index: 100000000;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: black;
+    z-index: 100000000;
 }
 
 .catCard1 {
-  background: url("/Aquatica/cat/1.png");
+    background: url("/Aquatica/cat/1.png");
 }
 
 .catCard2 {
-  background: url("/Aquatica/cat/2.png");
+    background: url("/Aquatica/cat/2.png");
 }
 
 .catCard3 {
-  background: url("/Aquatica/cat/3.png");
+    background: url("/Aquatica/cat/3.png");
 }
 
 .catCard4 {
-  background: url("/Aquatica/cat/4.png");
+    background: url("/Aquatica/cat/4.png");
 }
 
 .catCard5 {
-  background: url("/Aquatica/cat/5.png");
+    background: url("/Aquatica/cat/5.png");
 }
 
 .catCard6 {
-  background: url("/Aquatica/cat/6.png");
+    background: url("/Aquatica/cat/6.png");
 }
 
 .catCard7 {
-  background: url("/Aquatica/cat/7.png");
+    background: url("/Aquatica/cat/7.png");
 }
 
 .catCard8 {
-  background: url("/Aquatica/cat/8.png");
+    background: url("/Aquatica/cat/8.png");
 }
 
 .catCard9 {
-  background: url("/Aquatica/cat/9.png");
+    background: url("/Aquatica/cat/9.png");
 }
 
 .catCard10 {
-  background: url("/Aquatica/cat/10.png");
+    background: url("/Aquatica/cat/10.png");
 }
 
 .catCard11 {
-  background: url("/Aquatica/cat/11.png");
+    background: url("/Aquatica/cat/11.png");
 }
 
 /* // lenis code  */
 html.lenis {
-  height: auto;
+    height: auto;
 }
 
 .lenis.lenis-smooth {
-  scroll-behavior: auto !important;
+    scroll-behavior: auto !important;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
+    overscroll-behavior: contain;
 }
 
 .lenis.lenis-stopped {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .lenis.lenis-scrolling iframe {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 @media screen and (max-width: 700px) {
-  .navCon {
-    display: none;
-  }
+    .navCon {
+        display: none;
+    }
 }
 
 nav {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 1000000;
-  height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 500;
+    height: 100vh;
 }
 
 .navCon {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* width: 20rem; */
-  gap: 3rem;
-  width: 2rem;
-  /* background: green; */
-  overflow: visible;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* width: 20rem; */
+    gap: 3rem;
+    width: 2rem;
+    /* background: green; */
+    overflow: visible;
 }
 
-.navCon > div {
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 2rem;
+.navCon>div {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
 
-  animation: all 1s ease-in-out;
+    animation: all 1s ease-in-out;
 }
 
-.navCon > div > div {
-  margin-right: 2rem;
-  width: 12px !important;
-  height: 12px !important;
+.navCon>div>div {
+    margin-right: 2rem;
+    width: 12px !important;
+    height: 12px !important;
 
-  border: 1px solid var(--yellow);
+    border: 1px solid var(--yellow);
 
-  opacity: 0.7;
-  border-radius: 100%;
+    opacity: 0.7;
+    border-radius: 100%;
 
-  background: white;
+    background: white;
 }
 
-.navCon > div > div > * {
-  opacity: 0;
+.navCon>div>div>* {
+    opacity: 0;
 }
 
 .navTitle {
-  font-size: 1.2rem;
-  /* font-family: "Anton"; */
-  /* color: white; */
+    font-size: 1.2rem;
+    /* font-family: "Anton"; */
+    /* color: white; */
 
-  color: var(--yellow);
-  /* background: green; */
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  cursor: pointer;
-  opacity: 0;
-  padding-inline: 1rem;
-  padding-block: 0.5rem;
-  border-radius: 0.5rem;
-  backdrop-filter: blur(5px) brightness(0.7);
+    color: var(--yellow);
+    /* background: green; */
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+    opacity: 0;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(5px) brightness(0.7);
 
-  pointer-events: none;
+    pointer-events: none;
 }
 
-.navCon > div > div:hover,
+.navCon>div>div:hover,
 .activeNavCom {
-  opacity: 1 !important;
-  scale: 1.2 !important;
+    opacity: 1 !important;
+    scale: 1.2 !important;
 }
 
 #dreader:hover {
-  scale: 1 !important;
+    scale: 1 !important;
 }

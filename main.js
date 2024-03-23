@@ -200,3 +200,15 @@ const addNav = () => {
 
     }, 1000);
 }
+
+
+
+const pop = document.getElementById("PresalePopupCon");
+document.getElementById("popOpen").addEventListener("click", () => {
+    pop.style.display = "flex";
+})
+
+document.getElementById("popClose").addEventListener("click", () => {
+    pop.style.display = "none";
+})
+
