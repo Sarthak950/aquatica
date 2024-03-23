@@ -76,9 +76,9 @@
     height: 100%;
 
     letter-spacing: 0.2rem;
-    text-transform: capitalize;
     text-wrap: nowrap;
 
+    text-transform: uppercase;
     transition: all 0.3s ease;
 
     transform: rotate(-90deg) translateX(-9rem) translateY(-40%);
@@ -99,7 +99,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.5rem;
 }
 
@@ -117,10 +117,10 @@
     font-family: "Gelex";
     font-size: 1.5rem;
     letter-spacing: 0.1rem;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     width: 100%;
     line-height: 2rem;
-    text-align: center;
+    /* text-align: center; */
     width: 40vw;
 }
 
@@ -623,4 +623,8 @@
 .popLine {
     margin-top: 1.5rem;
     margin-bottom: 4rem;
+}
+
+.dreaderLogo {
+    /* transform: translateY(7%); */
 }

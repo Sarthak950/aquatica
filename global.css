@@ -222,6 +222,11 @@ nav {
     scale: 1.2 !important;
 }
 
+
+#dreader {
+    display: flex;
+    align-items: center;
+}
 #dreader:hover {
     scale: 1 !important;
 }
