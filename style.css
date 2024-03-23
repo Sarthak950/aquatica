@@ -90,15 +90,12 @@
     text-shadow: 4px 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-
 .TopSocialCon {
     width: fit-content;
     display: flex;
     flex-direction: column;
-    justify-content: cente;
-    align-items: center;
+    align-items: flex-start;
 }
-
 
 .herofooter {
     position: absolute;
@@ -169,7 +166,6 @@
     clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
     -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
     will-change: scroll-position;
-
 }
 
 .slide1 {
@@ -250,7 +246,6 @@
     -webkit-text-fill-color: rgba(0, 0, 0, 0) !important;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--yellow);
-
 }
 
 .contextText>div>h1 {
@@ -325,7 +320,6 @@
     -webkit-text-fill-color: rgba(0, 0, 0, 0) !important;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--yellow);
-
 
     opacity: 0.5;
 }
