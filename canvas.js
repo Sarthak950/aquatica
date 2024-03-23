@@ -225,7 +225,7 @@ if (!isMob) {
             duration: frameTransitionDuration,
             onUpdate: function () {
 
-                debouncedRender();
+                // debouncedRender();
             },
         }, `+=${frameTransitionDuration}`)
             .to(airpods, {
@@ -235,6 +235,7 @@ if (!isMob) {
                 onUpdate: function () {
                     console.log("Frame Count:", i);
 
+                    debouncedRender();
                 },
             });
 
