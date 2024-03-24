@@ -130,7 +130,7 @@ const addNav = () => {
     document.getElementsByClassName("pin-spacer")[0].appendChild(nav)
     document.getElementById("topScroll").addEventListener("click", (e) => {
         e.preventDefault()
-        console.log("click")
+        // console.log("click")
         window.scrollTo({
             top: window.innerHeight * 0,
             behavior: "smooth"
@@ -138,7 +138,7 @@ const addNav = () => {
     })
     document.getElementById("nftScroll").addEventListener("click", (e) => {
         e.preventDefault()
-        console.log("click")
+        // console.log("click")
         window.scrollTo({
             top: window.innerHeight * 15,
             behavior: "smooth"
@@ -146,7 +146,7 @@ const addNav = () => {
     })
     document.getElementById("comicScroll").addEventListener("click", (e) => {
         e.preventDefault()
-        console.log("click")
+        // console.log("click")
         window.scrollTo({
             top: window.innerHeight * 14,
             behavior: "smooth"
@@ -154,7 +154,7 @@ const addNav = () => {
     })
     document.getElementById("pathScroll").addEventListener("click", (e) => {
         e.preventDefault()
-        console.log("click")
+        // console.log("click")
         window.scrollTo({
             top: window.innerHeight * 13,
             behavior: "smooth"
@@ -162,7 +162,7 @@ const addNav = () => {
     })
     document.getElementById("charScroll").addEventListener("click", (e) => {
         e.preventDefault()
-        console.log("click")
+        // console.log("click")
         window.scrollTo({
             top: window.innerHeight * 2.5,
             behavior: "smooth"
@@ -170,7 +170,7 @@ const addNav = () => {
     })
     document.getElementById("bottomScroll").addEventListener("click", (e) => {
         e.preventDefault()
-        console.log("click")
+        // console.log("click")
         window.scrollTo({
             top: window.innerHeight * 16,
             behavior: "smooth"
@@ -200,6 +200,22 @@ const addNav = () => {
 
     }, 1000);
 }
+
+
+
+
+
+console.log(
+  "%c 🎉 Developed By %c Anivox Studios %c 🎉 \n\n%c Sarthak Sharma \n\n%c 📧 Contact: %c sharmasarthak05@gmail.com \n%c 💼 Portfolio: %c https://thesarthak.me",
+  "background: linear-gradient(to right, #ff758c, #ff7eb3); color: #fff; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 22px; text-shadow: 1px 1px 2px #000;",
+  "background: linear-gradient(to right, #11998e, #38ef7d); color: #fff; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 22px; text-shadow: 1px 1px 2px #000;",
+  "background: none;",
+  "font-weight: bold; font-size: 24px; color: #ff7eb3;",
+  "font-weight: bold; font-size: 24px; color: #11998e;",
+  "font-weight: bold; font-size: 24px; color: #ff7eb3; text-decoration: underline;",
+  "font-weight: bold; font-size: 24px; color: #11998e; text-decoration: underline;",
+  "font-size: 24px; color: #11998e; text-decoration: underline;"
+);
 
 
 

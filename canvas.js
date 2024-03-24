@@ -233,7 +233,7 @@ if (!isMob) {
                 snap: "frame",
                 duration: frameTransitionDuration,
                 onUpdate: function () {
-                    console.log("Frame Count:", i);
+                    // console.log("Frame Count:", i);
 
                     debouncedRender();
                 },
