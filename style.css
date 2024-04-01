@@ -58,6 +58,36 @@
     padding-inline: 2rem;
     padding-block: 0.5rem;
     background: linear-gradient(rgba(0, 0, 0, 1) -60%, rgba(0, 0, 0, 0) 90%);
+    display: flex;
+
+    width: 100vw;
+    padding-inline: 5rem;
+    padding-block: 1.3rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link {
+    font-size: 1.15rem;
+    color: var(--yellow);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: Anton;
+    font-weight: 400;
+}
+
+.link>img {
+    width: 2rem;
+    height: 2rem;
+    margin-inline: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .navCon {
+        padding-inline: 2rem;
+    }
 }
 
 .heroTitle {
@@ -241,7 +271,6 @@
     color: var(--yellow);
     font-size: 8rem;
     line-height: 10rem;
-
 
     color: rgba(0, 0, 0, 0) !important;
     -webkit-text-fill-color: rgba(0, 0, 0, 0) !important;
